@@ -1,0 +1,10 @@
+.header__nav {
+display:flex;
+/* flex-direction: row; */
+/* justify-content: flex-end; */
+margin-left:45px;
+margin-right: 0;
+width: 100%;
+align-items: center;
+
+}
