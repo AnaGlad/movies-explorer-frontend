@@ -13,10 +13,10 @@ function Footer({
         <nav className='footer__nav'>
           <ul className='footer__links'>
             <li className='footer__links-item'>
-              <a href='' className='footer__link' target='_blank'>Яндекс.Практикум</a>
+              <a href='https://practicum.yandex.ru/' className='footer__link' target='_blank' rel='noreferrer'>Яндекс.Практикум</a>
             </li>
             <li className='footer__links-item'>
-              <a href='' className='footer__link' target='_blank'>Github</a>
+              <a href='https://github.com/' className='footer__link' target='_blank' rel='noreferrer'>Github</a>
             </li>
           </ul>
         </nav>

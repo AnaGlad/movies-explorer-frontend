@@ -7,8 +7,6 @@ import AboutMe from './AboutMe/AboutMe';
 
 
 
-
-
 function Main({
 }) {
   // const currentUser = React.useContext(CurrentUserContext);

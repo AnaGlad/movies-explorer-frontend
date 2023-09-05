@@ -5,26 +5,27 @@ import burgerMenu from '../../images/burgerMenu.svg';
 
 
 import './Header.css';
-// import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 
 function Header({ userData }) {
-  // const navigate = useNavigate();
-  // const location = useLocation();
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  // function signOut() {
-  //   localStorage.removeItem('token');
-  //   navigate('signin');
-  // }
+  function signOut() {
+    localStorage.removeItem('token');
+    navigate('signin');
+  }
   return (
     <header className='header'>
       <img className='header__logo' src={headerLogo} alt='Логотип Улыбочка' />
       <div className='header__container'>
+        {((location.pathname ==='/')||(location.pathname ==='/movies')) && ( 
+        <>
         <div className='header__menu-burger'>
           <img className='header__menu-burger_img' src={burgerMenu} alt='Бургер Меню'/>
         </div>
         <nav className='header__nav'>
-          {/* {location.pathname === '/' && ( */}
           <ul className='header__movies'>
             <li><a href='' className='header__link header__movie'>
               Фильмы
@@ -38,8 +39,9 @@ function Header({ userData }) {
             <img className='header__image' src={iconMan} alt='Профиль' />
           </a>
         </nav>
+        </>
+        )}
       </div>
-      {/* )} */}
       {/* {location.pathname === '/signup' && ( */}
       {/* <Link to='signin' className='header__link'>
             Войти

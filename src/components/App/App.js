@@ -2,7 +2,9 @@
 import Header from '../Header/Header';
 import Main from '../Main/Main';
 import Footer from '../Footer/Footer';
-// import { Routes, Route } from 'react-router-dom';
+import Movies from '../Movies/Movies';
+
+import { Routes, Route } from 'react-router-dom';
 // import { ProtectedRoute } from '../ProtectedRoute';
 // import { useNavigate } from 'react-router-dom';
 
@@ -195,27 +197,19 @@ function App() {
     <div className='root'>
       <div className='page'>
         <Header />
-        {/* <Routes> */}
-          {/* <Route
+        <Routes>
+          <Route
             exact
             path='/'
-            element={
-              <ProtectedRoute
-                element={Main}
-                isLoggedIn={isLoggedIn}
-                cards={cards}
-                onEditProfile={handleEditProfileClick}
-                onAddPlace={handleAddPlaceClick}
-                onEditAvatar={handleEditAvatarClick}
-                onCardLike={handleCardLike}
-                onCardDelete={handleCardDelete}
-                onCardClick={handleCardClick}
-                footer={<Footer />}
-              />
-            } */}
-          {/* /> */}
-        {/* </Routes> */}
-        <Main />
+            element={<Main/>}
+          /> 
+          <Route
+            exact
+            path='/movies'
+            element={<Movies/>}
+          /> 
+        </Routes> 
+        {/* <Main /> */}
         <Footer />
         {/* <Routes>
             <Route
