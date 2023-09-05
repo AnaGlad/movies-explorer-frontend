@@ -1,7 +1,6 @@
 import React from 'react';
 import './Techs.css';
-import blackLine from '../../../images/blackLine.svg'
-
+import HeadingBlock from '../HeadingBlock/HeadingBlock'
 
 
 function Techs({
@@ -9,8 +8,7 @@ function Techs({
   // const currentUser = React.useContext(CurrentUserContext);
   return (
     <section className='techs'>
-      <h2 className='about-project__title'>Технологии</h2>
-      <div className='line'><img src={blackLine} alt='черная линия'></img></div>
+      <HeadingBlock title='Технологии' />
       <h3 className='techs__title'>7 технологий</h3>
       <p className='techs__text'>На курсе веб-разработки мы освоили технологии, которые применили в дипломном проекте.</p>
       <div className='techs__blockList'>

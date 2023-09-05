@@ -5,7 +5,6 @@
   border-radius: 3px;
   border: 1px solid rgba(255, 255, 255, 0.4);
   /* opacity: 0.6; */
-  
   color: rgba(255, 255, 255, 1);
   background-color: transparent;
   padding: 10px 20px;
@@ -20,4 +19,16 @@
   font-weight: 500;
   line-height: 16px;
   /* max-width: 89px; */
+}
+
+@media (max-width: 768px) {
+  .navtab {
+    margin-top: 92px;
+  }
+}
+
+@media (max-width: 500px) {
+  .navtab {
+    margin: 80px 0 30px;
+  }
 }

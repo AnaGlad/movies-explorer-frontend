@@ -1,0 +1,30 @@
+.headingblock {
+  width: 100%;
+  max-width: 1280px;
+  border-bottom: 1px solid rgba(0, 0, 0, 1);
+  padding-bottom: 23px;
+}
+
+.headingblock__title {
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.88px;
+  color: #000;
+  margin: 0;
+}
+
+@media (max-width: 500px) {
+  .headingblock__title {
+    font-size: 18px;
+    letter-spacing: -0.72px;
+  }
+}
+
+@media (max-width: 500px) {
+  .headingblock {
+  padding-bottom: 28px;
+    
+  }
+}

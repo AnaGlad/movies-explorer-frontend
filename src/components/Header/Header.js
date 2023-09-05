@@ -1,38 +1,56 @@
 import React from 'react';
 import headerLogo from '../../images/headerLogo.svg';
 import iconMan from '../../images/icon__COLOR_icon-main.svg';
+import burgerMenu from '../../images/burgerMenu.svg';
+
 
 import './Header.css';
-// import { Link, useNavigate, useLocation } from 'react-router-dom';
+// import { Link, useLocation, useNavigate } from 'react-router-dom';
+
 
 function Header({ userData }) {
   // const navigate = useNavigate();
   // const location = useLocation();
 
   // function signOut() {
-    // localStorage.removeItem('token');
-    // navigate('signin');
+  //   localStorage.removeItem('token');
+  //   navigate('signin');
   // }
   return (
     <header className='header'>
       <img className='header__logo' src={headerLogo} alt='Логотип Улыбочка' />
-      <nav className='header__nav'>
-        <div className='header__movies'>
-          <a href='' className='header__link header__movie'>
-            Фильмы
-          </a>
-          <a href='' className='header__link header__movie'>
-            Сохранённые фильмы
-          </a>
+      <div className='header__container'>
+        <div className='header__menu-burger'>
+          <img className='header__menu-burger_img' src={burgerMenu} alt='Бургер Меню'/>
         </div>
-        {/* <div className='header__profile'> */}
+        <nav className='header__nav'>
+          {/* {location.pathname === '/' && ( */}
+          <ul className='header__movies'>
+            <li><a href='' className='header__link header__movie'>
+              Фильмы
+            </a></li>
+            <li><a href='' className='header__link header__movie'>
+              Сохранённые фильмы
+            </a></li>
+          </ul>
           <a href='' className='header__profile header__link'>
             <span className='header__profile-link'>Аккаунт</span>
             <img className='header__image' src={iconMan} alt='Профиль' />
           </a>
-        {/* </div> */}
-      </nav>
-    </header>
+        </nav>
+      </div>
+      {/* )} */}
+      {/* {location.pathname === '/signup' && ( */}
+      {/* <Link to='signin' className='header__link'>
+            Войти
+          </Link> */}
+      {/* )} */}
+      {/* {location.pathname === '/signup' && ( */}
+      {/* <Link to='/' className='header__link header__exit' onClick={signOut}>
+            Выйти
+          </Link> */}
+      {/* )} */}
+    </header >
   );
 }
 

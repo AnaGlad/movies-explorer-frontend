@@ -1,6 +1,6 @@
 import React from 'react';
 import './AboutProject.css';
-import blackLine from '../../../images/blackLine.svg'
+import HeadingBlock from '../HeadingBlock/HeadingBlock'
 
 
 
@@ -8,8 +8,7 @@ function AboutProject({
 }) {
   return (
     <section className='about-project'>
-      <h2 className='about-project__title'>О проекте</h2>
-      <div className='line'><img src={blackLine} alt='черная линия'></img></div>
+      <HeadingBlock title='О проекте'/>
       <div className='about-project__info'>
         <div className='about-project__info-diplom'>
           <p className='about-project__heading'>Дипломный проект включал 5 этапов</p>

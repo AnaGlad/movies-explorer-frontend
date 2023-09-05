@@ -1,9 +1,15 @@
 // import React, { useState, useEffect } from 'react';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
+import Footer from '../Footer/Footer';
+// import { Routes, Route } from 'react-router-dom';
+// import { ProtectedRoute } from '../ProtectedRoute';
+// import { useNavigate } from 'react-router-dom';
+
 
 
 function App() {
+  // const navigate = useNavigate();
   // const [isLoggedIn, setIsLoggedIn] = useState(false);
   // const [isRegister, setIsRegister] = useState(false);
   // const [userData, setUserData] = useState(null);
@@ -186,11 +192,32 @@ function App() {
 
   return (
     // <CurrentUserContext.Provider value={currentUser}>
-      <div className='root'>
-        <div className='page'>
-          <Header/>
-          <Main/>
-          {/* <Routes>
+    <div className='root'>
+      <div className='page'>
+        <Header />
+        {/* <Routes> */}
+          {/* <Route
+            exact
+            path='/'
+            element={
+              <ProtectedRoute
+                element={Main}
+                isLoggedIn={isLoggedIn}
+                cards={cards}
+                onEditProfile={handleEditProfileClick}
+                onAddPlace={handleAddPlaceClick}
+                onEditAvatar={handleEditAvatarClick}
+                onCardLike={handleCardLike}
+                onCardDelete={handleCardDelete}
+                onCardClick={handleCardClick}
+                footer={<Footer />}
+              />
+            } */}
+          {/* /> */}
+        {/* </Routes> */}
+        <Main />
+        <Footer />
+        {/* <Routes>
             <Route
               exact
               path='/'
@@ -259,8 +286,8 @@ function App() {
             onClose={closeAllPopups}
             text={tooltipText}
           /> */}
-        </div>
       </div>
+    </div>
     // </CurrentUserContext.Provider>
   );
 }
