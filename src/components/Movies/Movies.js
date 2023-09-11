@@ -1,18 +1,22 @@
 import React from 'react';
 import './Movies.css';
-import FilterCheckbox from '../Movies/FilterCheckbox/FilterCheckbox'
+import SearchForm from '../Movies/SearchForm/SearchForm'
+import MoviesCardList from '../Movies/MoviesCardList/MoviesCardList'
 
 
 
-function Movies({
+function Movies({ header,footer,isSavedFilmsPage
 }) {
   return (
+    <>
+    { header }
     <section className='movies'>
-     <div className='movies'></div>
-      <FilterCheckbox/>
-      
+      <SearchForm />
+      <MoviesCardList isSavedFilmsPage={isSavedFilmsPage} />
+      <button className='movies__more-button' type='button'>Ещё</button>
     </section>
-
+    { footer }
+    </>
   );
 }
 

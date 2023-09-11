@@ -7,11 +7,11 @@ import AboutMe from './AboutMe/AboutMe';
 
 
 
-function Main({
+function Main({header,footer
 }) {
   // const currentUser = React.useContext(CurrentUserContext);
   return (
-    <>
+    <>{header}
       <main>
         {/* <section className='landing'> */}
           <Promo/>
@@ -24,7 +24,7 @@ function Main({
             className='profile__avatar'></div> */}
             {/* </section> */}
       </main>
-      {/* {footer} */}
+      {footer}
     </>
   );
 }

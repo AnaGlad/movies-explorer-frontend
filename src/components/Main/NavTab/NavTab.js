@@ -6,7 +6,7 @@ function NavTab({
 }) {
   return (
     <div className='navtab'>
-    <a href='' className='navtab__link'>
+    <a href='#aboutproject' className='navtab__link'>
       Узнать больше
     </a>
 </div>

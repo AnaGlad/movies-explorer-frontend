@@ -1,0 +1,131 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: 74px auto 70px;
+}
+
+.profile__welcome {
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0;
+}
+
+.profile__container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto 0;
+  width: 410px;
+  padding: 123px 0 220px;
+}
+
+.profile__box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.profile__box:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+  padding-top: 17px;
+}
+
+.profile__box-name {
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0;
+}
+
+.profile__box-label {
+}
+
+.profile__box-value {
+  display: flex;
+  border: none;
+  color: #000;
+  text-align: right;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.profile__edit {
+  border: none;
+  background-color: transparent;
+  text-align: center;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  cursor: pointer;
+}
+
+.profile__exit {
+  border: none;
+  background-color: transparent;
+  color: #ee3465;
+  text-align: center;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding-top: 16px;
+  cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+  .profile__container {
+    padding: 96px 0 210px;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile {
+    margin: 236px auto 269px;
+    max-width: 768px;
+  }
+}
+
+@media (max-width: 450px) {
+  .profile__container {
+    width: 260px;
+  }
+}
+@media (max-width: 450px) {
+  .profile {
+    margin: 70px auto 40px;
+    max-width: 320px;
+  }
+}
+
+
+@media (max-width: 450px) {
+  .profile__edit {
+    font-size: 12px;
+    font-weight: 400;
+  }
+}
+
+@media (max-width: 450px) {
+  .profile__exit {
+    font-size: 12px;
+    font-weight: 400;
+  }
+}
+
+@media (max-width: 450px) {
+  .profile__container {
+    padding: 80px 0 379px;
+  }
+}

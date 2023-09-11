@@ -1,16 +1,25 @@
-// import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
 import Footer from '../Footer/Footer';
 import Movies from '../Movies/Movies';
+import Profile from '../Profile/Profile';
+import Register from '../Register/Register';
+import Login from '../Login/Login';
+import NotFoundPage from '../NotFoundPage/NotFoundPage';
+
+
+
 
 import { Routes, Route } from 'react-router-dom';
+import MenuPopup from '../MenuPopup/MenuPopup';
 // import { ProtectedRoute } from '../ProtectedRoute';
 // import { useNavigate } from 'react-router-dom';
 
 
 
 function App() {
+  const [isMenuPopupOpen, setIsMenuPopupOpen] = useState(false);
   // const navigate = useNavigate();
   // const [isLoggedIn, setIsLoggedIn] = useState(false);
   // const [isRegister, setIsRegister] = useState(false);
@@ -147,9 +156,9 @@ function App() {
   //   setSelectedCard(card);
   // }
 
-  // function handleEditProfileClick() {
-  //   setIsEditProfilePopupOpen(true);
-  // }
+  function handleMenuPopupOpen() {
+    setIsMenuPopupOpen(true);
+  }
 
   // function handleEditAvatarClick() {
   //   setIsEditAvatarPopupOpen(true);
@@ -196,21 +205,46 @@ function App() {
     // <CurrentUserContext.Provider value={currentUser}>
     <div className='root'>
       <div className='page'>
-        <Header />
+        {/* <Header /> */}
         <Routes>
           <Route
             exact
             path='/'
-            element={<Main/>}
-          /> 
+            element={<Main header={<Header textcolor={'rgba(255, 255, 255, 1)'} onOpenBurgerMenu={handleMenuPopupOpen}/>}
+              footer={<Footer />} />}
+          />
           <Route
             exact
             path='/movies'
-            element={<Movies/>}
-          /> 
-        </Routes> 
+            element={<Movies header={<Header color={'rgba(255, 255, 255, 1)'} textcolor={'rgba(0, 0, 0, 1)'} colorIcon={'rgba(249, 249, 249, 1)'} />} footer={<Footer />} />}
+          />
+          <Route
+            exact
+            path='/saved-movies'
+            element={<Movies isSavedFilmsPage={true} header={<Header color={'rgba(255, 255, 255, 1)'} textcolor={'rgba(0, 0, 0, 1)'} colorIcon={'rgba(249, 249, 249, 1)'} />} footer={<Footer />} />}
+          />
+          <Route
+            exact
+            path='/profile'
+            element={<Profile header={<Header color={'rgba(255, 255, 255, 1)'} textcolor={'rgba(0, 0, 0, 1)'} colorIcon={'rgba(249, 249, 249, 1)'}/>} name={'Настя'} />}
+          />
+          <Route
+            exact
+            path='/signin'
+            element={<Login buttonName={'Войти'} />}
+          />
+          <Route
+            exact
+            path='/signup'
+            element={<Register buttonName={'Зарегистрироваться'}  />}
+          />
+          <Route
+            path='/404'
+            element={<NotFoundPage />}
+          />
+        </Routes>
+        {/* <MenuPopup isOpen={isMenuPopupOpen}/> */}
         {/* <Main /> */}
-        <Footer />
         {/* <Routes>
             <Route
               exact

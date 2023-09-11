@@ -196,14 +196,22 @@
   .about-me__link-list {
     font-size: 12px;
     line-height: 18px;
+    margin: 0 0 90px;
   }
 }
+
 @media (max-width: 768px) {
   .about-me__cv {
     /* grid-template-columns: 364fr 304fr; */
   }
 }
 
+
+@media (max-width: 550px) {
+  .about-me__link-list {
+    margin: 0 0 70px;
+  }
+}
 
 
 @media (max-width: 550px) {

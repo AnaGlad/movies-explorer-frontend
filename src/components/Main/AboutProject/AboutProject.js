@@ -7,7 +7,7 @@ import HeadingBlock from '../HeadingBlock/HeadingBlock'
 function AboutProject({
 }) {
   return (
-    <section className='about-project'>
+    <section className='about-project'id='aboutproject'>
       <HeadingBlock title='О проекте'/>
       <div className='about-project__info'>
         <div className='about-project__info-diplom'>
