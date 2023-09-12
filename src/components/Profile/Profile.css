@@ -20,7 +20,8 @@
   flex-direction: column;
   margin: 0 auto 0;
   width: 410px;
-  padding: 123px 0 220px;
+  gap: 17px;
+  padding-top: 123px;
 }
 
 .profile__box {
@@ -59,7 +60,17 @@
   line-height: normal;
 }
 
-.profile__edit {
+.profile__buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile__buttons_hide {
+  visibility: hidden;
+  display: block;
+}
+
+.profile__button-edit {
   border: none;
   background-color: transparent;
   text-align: center;
@@ -68,9 +79,13 @@
   font-weight: 400;
   line-height: normal;
   cursor: pointer;
+  padding-top: 185px;
+}
+.profile__button-edit:hover {
+  opacity: 0.7;
 }
 
-.profile__exit {
+.profile__button-exit {
   border: none;
   background-color: transparent;
   color: #ee3465;
@@ -83,6 +98,36 @@
   cursor: pointer;
 }
 
+.profile__button-exit:hover {
+  opacity: 0.7;
+}
+
+.profile__button-save {
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 410px;
+  height: 45px;
+  border-radius: 3px;
+  background: #3456f3;
+  color: #fff;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  content: 'Сохранить';
+  padding: 0;
+}
+
+.profile__button_hide {
+  visibility: hidden;
+  display: block;
+}
+
+.profile__button-save:hover {
+  opacity: 0.8;
+}
 
 @media (max-width: 768px) {
   .profile__container {
@@ -108,7 +153,6 @@
     max-width: 320px;
   }
 }
-
 
 @media (max-width: 450px) {
   .profile__edit {

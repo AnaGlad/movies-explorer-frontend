@@ -1,8 +1,8 @@
 import React from 'react';
 import './AboutMe.css';
 import photoMe from '../../../images/photoMe.jpg'
-import arrow from '../../../images/arrow.svg'
 import HeadingBlock from '../HeadingBlock/HeadingBlock'
+import Portfolio from '../Portfolio/Portfolio'
 
 
 function AboutMe({
@@ -10,7 +10,6 @@ function AboutMe({
   return (
     <section className='about-me'>
       <HeadingBlock title='Студент' />
-      {/* <div className='about-me'> */}
       <div className='about-me__cv'>
         <div className='about-me__text'>
           <h3 className='about-me__name'>Анастасия</h3>
@@ -25,35 +24,8 @@ function AboutMe({
           alt="Фото"
         />
       </div>
-      <h3 className='about-me__portfolio'>Портфолио</h3>
-      <ul className='about-me__link-list'>
-        <li className='about-me__link'>
-          <div className='about-me__link-name'>Статичный сайт</div>
-          <a href='' className='about-me__link-arrow' target='_blank'><img
-            className='about-me__arrow'
-            src={arrow}
-            alt='Стрела'
-          /></a>
-        </li>
-        <li className='about-me__link'>
-          <div className='about-me__link-name'>Адаптивный сайт</div>
-          <a href='https://anaglad.github.io/russian-travel/' className='about-me__link-arrow' target='_blank' rel='noreferrer'><img
-            className='about-me__arrow'
-            src={arrow}
-            alt='Стрела'
-          /></a>
-        </li>
-        <li className='about-me__link'>
-          <div className='about-me__link-name'>Одностраничное приложение</div>
-          <a href='https://avp.nomoreparties.co' className='about-me__link-arrow' target='_blank' rel='noreferrer'><img
-            className='about-me__arrow'
-            src={arrow}
-            alt='Стрела'
-          /></a>
-        </li>
-      </ul>
+      <Portfolio/>
     </section>
-
   );
 }
 

@@ -5,7 +5,6 @@ import HeadingBlock from '../HeadingBlock/HeadingBlock'
 
 function Techs({
 }) {
-  // const currentUser = React.useContext(CurrentUserContext);
   return (
     <section className='techs'>
       <HeadingBlock title='Технологии' />

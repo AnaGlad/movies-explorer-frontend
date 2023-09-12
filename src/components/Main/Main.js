@@ -7,22 +7,15 @@ import AboutMe from './AboutMe/AboutMe';
 
 
 
-function Main({header,footer
+function Main({ header, footer
 }) {
-  // const currentUser = React.useContext(CurrentUserContext);
   return (
     <>{header}
       <main>
-        {/* <section className='landing'> */}
-          <Promo/>
-          <AboutProject/>
-          <Techs/>
-          <AboutMe/>
-
-
-          {/* <div
-            className='profile__avatar'></div> */}
-            {/* </section> */}
+        <Promo />
+        <AboutProject />
+        <Techs />
+        <AboutMe />
       </main>
       {footer}
     </>

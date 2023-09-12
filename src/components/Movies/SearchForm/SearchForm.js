@@ -15,20 +15,18 @@ function SearchForm({
           <input
             type='text'
             name='movie'
-            // value={name || ''}
-            // onChange={handleNameChange}
             className='movies__search-input'
             placeholder='Фильм'
             minLength='2'
             maxLength='40'
-          // required
+            required
           />
           {/* <span className='popup__form-text-error popup__form-text-error_type_name'></span> */}
         </label>
         <button className='movies__search-find' type='button'><img className='movies__search-find-button' src={findIcon} alt='Стрелочка поиска' /></button>
       </div>
       <FilterCheckbox />
-      </>
+    </>
   );
 }
 

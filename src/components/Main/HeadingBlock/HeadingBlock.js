@@ -1,7 +1,7 @@
 import React from 'react';
 import './HeadingBlock.css';
 
-function HeadingBlock({title
+function HeadingBlock({ title
 }) {
   return (
     <div className='headingblock'>

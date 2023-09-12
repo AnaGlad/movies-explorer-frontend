@@ -93,7 +93,6 @@
 @media (max-width: 768px) {
   .login {
     margin: 232px 0;
-    /* max-width: 320px; */
   }
 }
 
@@ -107,8 +106,6 @@
 @media (max-width: 450px) {
   .login__form-text {
     width: 260px;
-    /* justify-content: center; */
-    /* height: 46px; */
   }
 }
 

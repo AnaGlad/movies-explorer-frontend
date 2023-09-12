@@ -6,10 +6,10 @@ function NavTab({
 }) {
   return (
     <div className='navtab'>
-    <a href='#aboutproject' className='navtab__link'>
-      Узнать больше
-    </a>
-</div>
+      <a href='#aboutproject' className='navtab__link'>
+        Узнать больше
+      </a>
+    </div>
   );
 }
 

@@ -4,7 +4,6 @@ import './Footer.css';
 
 function Footer({
 }) {
-  // const currentUser = React.useContext(CurrentUserContext);
   return (
     <section className='footer'>
       <h4 className='footer__title'>Учебный проект Яндекс.Практикум х BeatFilm.</h4>

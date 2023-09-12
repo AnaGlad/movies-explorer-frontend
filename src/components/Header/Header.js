@@ -28,7 +28,7 @@ function Header({ color, textcolor, colorIcon }) {
               <img className='header__menu-burger_img' src={burgerMenu} alt='Бургер Меню' />
             </div>
             <Navigation textColor={textcolor} colorIcon={colorIcon} />
-            <MenuPopup isOpen={isOpen} setIsOpen={setIsOpen}/>
+            <MenuPopup isOpen={isOpen} setIsOpen={setIsOpen} />
           </>
         )}
       </div>

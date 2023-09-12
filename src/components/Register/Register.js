@@ -4,35 +4,30 @@ import headerLogo from '../../images/headerLogo.svg';
 import { Link, useNavigate } from 'react-router-dom';
 
 
-function Register({buttonName
-})
-{
-const navigate = useNavigate();
+function Register({ buttonName
+}) {
+  const navigate = useNavigate();
 
   return (
     <>
       <section className='register'>
         <div className='register__welcome'>
-        <Link to='/'><img className='login__header-logo' src={headerLogo} alt='Логотип Улыбочка' /></Link>
+          <Link to='/'><img className='login__header-logo' src={headerLogo} alt='Логотип Улыбочка' /></Link>
           <h1 className='register__title'>Добро пожаловать!</h1>
-        <form className='register__form'>
-          <label className='register__label'>Имя
-            <input
+          <form className='register__form'>
+            <label className='register__label'>Имя
+              <input
                 type='name'
                 name='name'
-                // value={formValue.email}
-                // onChange={handleChange}
                 className='register__form-text register__form-text_type_name'
                 placeholder='Имя'
                 required
               />
-          </label>
-          <label className='register__label'>E-mail
-            <input
+            </label>
+            <label className='register__label'>E-mail
+              <input
                 type='email'
                 name='email'
-                // value={formValue.email}
-                // onChange={handleChange}
                 className='register__form-text register__form-text_type_email'
                 placeholder='E-mail'
                 required
@@ -42,8 +37,6 @@ const navigate = useNavigate();
               <input
                 type='password'
                 name='password'
-                // value={formValue.password}
-                // onChange={handleChange}
                 className='register__form-text register__form-text_type_password'
                 placeholder='Пароль'
                 required

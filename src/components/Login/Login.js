@@ -12,15 +12,13 @@ function Login({ buttonName
     <>
       <section className='login'>
         <div className='login__welcome'>
-        <Link to='/'><img className='login__header-logo' src={headerLogo} alt='Логотип Улыбочка' /></Link>
+          <Link to='/'><img className='login__header-logo' src={headerLogo} alt='Логотип Улыбочка' /></Link>
           <h1 className='login__title'>Рады видеть!</h1>
           <form className='login__form'>
             <label className='login__label'>E-mail
               <input
                 type='email'
                 name='email'
-                // value={formValue.email}
-                // onChange={handleChange}
                 className='login__form-text login__form-text_type_email'
                 placeholder='E-mail'
                 required
@@ -30,8 +28,6 @@ function Login({ buttonName
               <input
                 type='password'
                 name='password'
-                // value={formValue.password}
-                // onChange={handleChange}
                 className='login__form-text login__form-text_type_password'
                 placeholder='Пароль'
                 required

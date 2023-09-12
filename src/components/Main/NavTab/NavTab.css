@@ -1,10 +1,8 @@
 .navtab {
-  /* display: flex; */
   max-width: 129px;
   max-height: 36px;
   border-radius: 3px;
   border: 1px solid rgba(255, 255, 255, 0.4);
-  /* opacity: 0.6; */
   color: rgba(255, 255, 255, 1);
   background-color: transparent;
   padding: 10px 20px;
@@ -19,6 +17,9 @@
   font-weight: 500;
   line-height: 16px;
   display: flex;
+}
+.navtab__link:hover {
+  opacity: 0.7;
 }
 
 @media (max-width: 768px) {

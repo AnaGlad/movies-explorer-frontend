@@ -8,17 +8,17 @@
 }
 
 @media (max-width: 899px) {
-.movies__card-list {
-  /* padding: 70px 0 30px; */
-  grid-template-columns: repeat(2, calc((100% - 30px) / 2));
-  justify-content: center;
-  gap: 36px 30px;
-  /* max-width: 768; */
-}}
+  .movies__card-list {
+    grid-template-columns: repeat(2, calc((100% - 30px) / 2));
+    justify-content: center;
+    gap: 36px 30px;
+  }
+}
 
 @media (max-width: 600px) {
   .movies__card-list {
     padding: 0 0 80px;
     grid-template-columns: repeat(1, 1fr);
-    gap:16px;
-  }}
+    gap: 16px;
+  }
+}

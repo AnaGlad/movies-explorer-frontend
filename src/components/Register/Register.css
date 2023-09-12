@@ -62,7 +62,6 @@
   height: 45px;
   margin: 69px 0 16px;
   cursor: pointer;
-
 }
 
 .register__link {
@@ -94,7 +93,6 @@
 @media (max-width: 768px) {
   .register {
     margin: 232px 0;
-    /* max-width: 320px; */
   }
 }
 
@@ -108,8 +106,6 @@
 @media (max-width: 450px) {
   .register__form-text {
     width: 260px;
-    /* justify-content: center; */
-    /* height: 46px; */
   }
 }
 

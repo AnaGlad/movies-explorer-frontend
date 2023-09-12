@@ -7,8 +7,8 @@ import HeadingBlock from '../HeadingBlock/HeadingBlock'
 function AboutProject({
 }) {
   return (
-    <section className='about-project'id='aboutproject'>
-      <HeadingBlock title='О проекте'/>
+    <section className='about-project' id='aboutproject'>
+      <HeadingBlock title='О проекте' />
       <div className='about-project__info'>
         <div className='about-project__info-diplom'>
           <p className='about-project__heading'>Дипломный проект включал 5 этапов</p>
@@ -19,11 +19,11 @@ function AboutProject({
           <p className='about-project__text'>У каждого этапа был мягкий и жёсткий дедлайн, которые нужно было соблюдать, чтобы успешно защититься.</p>
         </div>
       </div>
-        <div className='about-project__timeline'>
-          <div className='about-project__timeline-green'>1 неделя</div>
-          <div className='about-project__timeline-grey'>4 недели</div>
-          <div className='about-project__timeline-back'>Back-end</div>
-          <div className='about-project__timeline-front'>Front-end</div>
+      <div className='about-project__timeline'>
+        <div className='about-project__timeline-green'>1 неделя</div>
+        <div className='about-project__timeline-grey'>4 недели</div>
+        <div className='about-project__timeline-back'>Back-end</div>
+        <div className='about-project__timeline-front'>Front-end</div>
       </div>
 
     </section>

@@ -12,7 +12,6 @@
   grid-template-columns: calc(100% - 44px), 44px;
   margin: 14px 14px;
   max-height: 40px;
-  /* flex-direction: column; */
 }
 
 .movies__card-name {
@@ -49,16 +48,16 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  /* object-fit: fill; */
-  /* background-position: center; */
 }
 
 @media (max-width: 899px) {
   .movies__card-poster {
-  min-height: 190px;
-}}
+    min-height: 190px;
+  }
+}
 
 @media (max-width: 600px) {
   .movies__card-poster {
-  min-height: 168px;
-}}
+    min-height: 168px;
+  }
+}

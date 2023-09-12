@@ -8,19 +8,19 @@ function MenuPopup({ isOpen, setIsOpen }) {
   return (
     <>
       <div className={`menupopup ${isOpen ? 'menupopup_opened' : ''}`}>
-      <div className='menupopup__container'>
-      <button
-          className='menupopup__close-button hover'
-          type='button'
-          title='Close'
-          onClick={()=>setIsOpen(false)}
-        ></button>
-      <Navigation isPopup={true} children={
-        <li><a href='/' className='header__link header__movie'>
-            Главная
-          </a></li>}/>
+        <div className='menupopup__container'>
+          <button
+            className='menupopup__close-button hover'
+            type='button'
+            title='Close'
+            onClick={() => setIsOpen(false)}
+          ></button>
+          <Navigation isPopup={true} children={
+            <li><a href='/' className={`navigation__container-link ${(window.location.pathname === '/') ? 'navigation__container-link_active' : ''}`}>
+              Главная
+            </a></li>} />
+        </div>
       </div>
-    </div>
     </>
   );
 }

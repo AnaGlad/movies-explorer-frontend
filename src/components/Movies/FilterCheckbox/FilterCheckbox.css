@@ -1,19 +1,18 @@
-.filterCheckbox{
-display: flex;
-align-items: center;
-justify-content: center;
-padding: 29px 0 49px;
+.filterCheckbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 29px 0 49px;
 }
 
-.filterCheckbox__button{
-border: none;
-background-color: transparent;
-padding: 0 12px 0 0;
-cursor: pointer;
-
+.filterCheckbox__button {
+  border: none;
+  background-color: transparent;
+  padding: 0 12px 0 0;
+  cursor: pointer;
 }
 
-.filterCheckbox__span{
+.filterCheckbox__span {
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -22,13 +21,13 @@ cursor: pointer;
 
 @media (max-width: 768px) {
   .filterCheckbox {
-  padding-bottom: 61px;
+    padding-bottom: 61px;
   }
 }
 
 @media (max-width: 600px) {
   .filterCheckbox {
-  padding: 43px 0px 91px;
+    padding: 43px 0px 91px;
   }
 }
 
@@ -36,8 +35,4 @@ cursor: pointer;
   .filterCheckbox__span {
     font-size: 11px;
   }
-}
-
-.filterCheckbox__span_disable{
-  
 }

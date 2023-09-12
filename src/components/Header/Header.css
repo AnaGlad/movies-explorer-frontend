@@ -9,7 +9,6 @@
   box-sizing: border-box;
   height: 100%;
   position: relative;
-
 }
 
 .header__container {
@@ -17,18 +16,8 @@
   display: flex;
 }
 
-.header__logo{
+.header__logo {
   display: flex;
-}
-
-.header__image {
-  margin-left: 17px;
-  border-radius: 4px;
-  background: #2be080;
-  width: 26px;
-  height: 30px;
-  flex-shrink: 0;
-  object-fit: none;
 }
 
 .page {
@@ -41,15 +30,12 @@
   height: 100%;
 }
 
-
-
 @media (max-width: 768px) {
   .header {
     max-width: 768px;
     padding: 15px 30px;
   }
 }
-
 
 @media (min-width: 769px) {
   .header__menu-burger {

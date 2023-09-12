@@ -1,18 +1,18 @@
 import React from 'react';
-import './Movies.css';
+import './SavedMovies.css';
 import SearchForm from '../Movies/SearchForm/SearchForm'
 import MoviesCardList from '../Movies/MoviesCardList/MoviesCardList'
 
 
 
-function Movies({ header, footer
+function SavedMovies ({ header, footer
 }) {
   return (
     <>
       {header}
       <section className='movies'>
         <SearchForm />
-        <MoviesCardList isSavedFilmsPage={false} />
+        <MoviesCardList isSavedFilmsPage={true} />
         <button className='movies__more-button' type='button'>Ещё</button>
       </section>
       {footer}
@@ -20,4 +20,4 @@ function Movies({ header, footer
   );
 }
 
-export default Movies;
+export default SavedMovies;

@@ -13,25 +13,29 @@ import pic9 from '../../../images/picture9.png'
 import pic10 from '../../../images/picture10.png'
 import pic11 from '../../../images/picture11.png'
 import pic12 from '../../../images/picture12.png'
+import Preloader from '../Preloader/Preloader'
 
-function MoviesCardList({isSavedFilmsPage
+function MoviesCardList({ isSavedFilmsPage
 }) {
   return (
-    <section className='movies__card-list'>
-      <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic1}/>
-      <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic2}/>
-      <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic3}/>
-      <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic4}/>
-      <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic5}/>
-      <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic6}/>
-      <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic7}/>
-      <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic8}/>
-      <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic9}/>
-      <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic10}/>
-      <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic11}/>
-      <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic12}/>
+    <>
+      {/* <Preloader/> */}
+      <section className='movies__card-list'>
+        <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic1} />
+        <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic2} />
+        <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic3} />
+        <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic4} />
+        <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic5} />
+        <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic6} />
+        <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic7} />
+        <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic8} />
+        <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic9} />
+        <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic10} />
+        <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic11} />
+        <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic12} />
+      </section>
 
-    </section>
+    </>
   );
 }
 
