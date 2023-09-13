@@ -10,7 +10,7 @@ function Login({ buttonName
 
   return (
     <>
-      <section className='login'>
+      <main className='login'>
         <div className='login__welcome'>
           <Link to='/'><img className='login__header-logo' src={headerLogo} alt='Логотип Улыбочка' /></Link>
           <h1 className='login__title'>Рады видеть!</h1>
@@ -41,7 +41,7 @@ function Login({ buttonName
             Еще не зарегистрированы? <span className='login__span'>Регистрация</span>
           </Link>
         </div>
-      </section>
+      </main>
     </>
   );
 }

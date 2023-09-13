@@ -17,18 +17,19 @@ function Header({ color, textcolor, colorIcon }) {
     localStorage.removeItem('token');
     navigate('signin');
   }
+  const [isLogin] = useState(false);
   return (
     <header className='header' style={{ backgroundColor: color }}>
       <Link to='/'><img className='header__logo' src={headerLogo} alt='Логотип Улыбочка' /></Link>
       <div className='header__container'>
         {((location.pathname === '/') || (location.pathname === '/movies') || (location.pathname === '/saved-movies') || (location.pathname === '/profile')) && (
           <>
-            <div className='header__menu-burger'
+            <div className={` header__menu-burger ${isLogin?'':'header__menu-burger_hidden'} `}
               onClick={() => setIsOpen(true)}>
-              <img className='header__menu-burger_img' src={burgerMenu} alt='Бургер Меню' />
+              <img className='header__menu-burger-img' src={burgerMenu} alt='Бургер Меню' />
             </div>
-            <Navigation textColor={textcolor} colorIcon={colorIcon} />
-            <MenuPopup isOpen={isOpen} setIsOpen={setIsOpen} />
+            <Navigation textColor={textcolor} colorIcon={colorIcon} isLogin={isLogin} />
+            <MenuPopup isOpen={isOpen} isLogin={isLogin} setIsOpen={setIsOpen} />
           </>
         )}
       </div>

@@ -7,7 +7,7 @@
   padding-bottom: 15px;
 }
 
-.movies__search {
+.movies__search-img {
   margin-left: 5px;
 }
 
@@ -35,7 +35,7 @@
 }
 
 @media (max-width: 600px) {
-  .movies__search {
+  .movies__search-img {
     display: none;
     visibility: hidden;
   }

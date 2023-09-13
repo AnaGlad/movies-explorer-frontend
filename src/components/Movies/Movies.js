@@ -10,11 +10,11 @@ function Movies({ header, footer
   return (
     <>
       {header}
-      <section className='movies'>
+      <main className='movies'>
         <SearchForm />
         <MoviesCardList isSavedFilmsPage={false} />
         <button className='movies__more-button' type='button'>Ещё</button>
-      </section>
+      </main>
       {footer}
     </>
   );

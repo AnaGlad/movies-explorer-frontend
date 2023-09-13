@@ -5,10 +5,10 @@ import './Footer.css';
 function Footer({
 }) {
   return (
-    <section className='footer'>
+    <footer className='footer'>
       <h4 className='footer__title'>Учебный проект Яндекс.Практикум х BeatFilm.</h4>
       <div className='footer__info'>
-        <div className='footer__coopyright'>&copy; 2023 </div>
+        <p className='footer__coopyright'>&copy; 2023 </p>
         <nav className='footer__nav'>
           <ul className='footer__links'>
             <li className='footer__links-item'>
@@ -20,8 +20,7 @@ function Footer({
           </ul>
         </nav>
       </div>
-    </section>
-
+    </footer>
   );
 }
 

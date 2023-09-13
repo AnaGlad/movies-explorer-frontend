@@ -10,14 +10,14 @@ function Register({ buttonName
 
   return (
     <>
-      <section className='register'>
+      <main className='register'>
         <div className='register__welcome'>
-          <Link to='/'><img className='login__header-logo' src={headerLogo} alt='Логотип Улыбочка' /></Link>
+          <Link to='/'><img className='register__header-logo' src={headerLogo} alt='Логотип Улыбочка' /></Link>
           <h1 className='register__title'>Добро пожаловать!</h1>
           <form className='register__form'>
             <label className='register__label'>Имя
               <input
-                type='name'
+                type='text'
                 name='name'
                 className='register__form-text register__form-text_type_name'
                 placeholder='Имя'
@@ -51,7 +51,7 @@ function Register({ buttonName
             Уже зарегистрированы? <span className='register__span'>Войти</span>
           </Link>
         </div>
-      </section>
+      </main>
     </>
   );
 }

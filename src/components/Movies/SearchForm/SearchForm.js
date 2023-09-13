@@ -8,25 +8,27 @@ import FilterCheckbox from '../FilterCheckbox/FilterCheckbox'
 function SearchForm({
 }) {
   return (
-    <>
-      <div className='movies__search-container'>
-        <img className='movies__search' src={searchIcon} alt='Иконка поиска' />
-        <label className='movies__search-label'>
-          <input
-            type='text'
-            name='movie'
-            className='movies__search-input'
-            placeholder='Фильм'
-            minLength='2'
-            maxLength='40'
-            required
-          />
-          {/* <span className='popup__form-text-error popup__form-text-error_type_name'></span> */}
-        </label>
-        <button className='movies__search-find' type='button'><img className='movies__search-find-button' src={findIcon} alt='Стрелочка поиска' /></button>
-      </div>
-      <FilterCheckbox />
-    </>
+    <section className='movies__search'>
+      <form className='movies__search-form'>
+        <div className='movies__search-container'>
+          <img className='movies__search-img' src={searchIcon} alt='Иконка поиска' />
+          <label className='movies__search-label'>
+            <input
+              type='text'
+              name='movie'
+              className='movies__search-input'
+              placeholder='Фильм'
+              minLength='2'
+              maxLength='40'
+              required
+            />
+            {/* <span className='popup__form-text-error popup__form-text-error_type_name'></span> */}
+          </label>
+          <button className='movies__search-find' type='submit'><img className='movies__search-find-button' src={findIcon} alt='Стрелочка поиска' /></button>
+        </div>
+        <FilterCheckbox />
+      </form>
+    </section>
   );
 }
 
