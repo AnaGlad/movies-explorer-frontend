@@ -12,7 +12,7 @@ function Profile({ header, name
   return (
     <>{header}
       <main className='profile'>
-        <h1 className='profile__welcome'>Привет,{name}!</h1>
+        <h1 className='profile__welcome'>Привет, {name}!</h1>
         <form className='profile__container'>
           <div className='profile__box'>
             <h2 className='profile__box-name'>Имя</h2>

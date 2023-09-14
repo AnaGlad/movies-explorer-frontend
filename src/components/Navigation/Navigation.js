@@ -6,7 +6,7 @@ function Navigation({ textColor, colorIcon, children, isPopup, isLogin
 }) {
   return (
     <>
-      <nav className={`navigation`}>
+      <nav className={`navigation ${(isLogin)&&(!isPopup) ? 'navigation_hidden' : ''}`}>
         <ul className={`navigation__container ${(isLogin) ? '' : 'navigation__container_hidden'} ${(isPopup) ? '' : 'navigation__container_popup'} `}>
           {children}
           <li>
@@ -25,8 +25,8 @@ function Navigation({ textColor, colorIcon, children, isPopup, isLogin
           <img className='navigation__profile-image' src={iconMan} alt='Профиль' style={{ backgroundColor: colorIcon }} />
         </a>
         <div className={`navigation__enter ${isLogin ? 'navigation__enter_hidden' : ''}`}>
-          <a href='/signin' className='navigation__enter-register navigation__container-link' style={{ color: textColor }}>Регистрация</a>
-          <a href='/signup' className='navigation__enter-login navigation__container-link' >Войти</a>
+          <a href='/signup' className='navigation__enter-register navigation__container-link' style={{ color: textColor }}>Регистрация</a>
+          <a href='/signin' className='navigation__enter-login navigation__container-link' >Войти</a>
         </div>
       </nav >
     </>

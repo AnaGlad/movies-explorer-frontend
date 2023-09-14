@@ -9,10 +9,10 @@ function NotFoundPage({
 
   return (
     <>
-      <main className='default__page'>
-        <h1 className='default__page-title'>404</h1>
-        <p className='default__page-text'>Страница не найдена</p>
-        <button onClick={() => navigate(-1)} className='default__page-link' type='button'>Назад</button>
+      <main className='page__default'>
+        <h1 className='page__default-title'>404</h1>
+        <p className='page__default-text'>Страница не найдена</p>
+        <button onClick={() => navigate(-1)} className='page__default-link' type='button'>Назад</button>
       </main>
     </>
   );

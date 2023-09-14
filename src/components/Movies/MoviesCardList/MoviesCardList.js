@@ -20,7 +20,7 @@ function MoviesCardList({ isSavedFilmsPage
   return (
     <>
       {/* <Preloader/> */}
-      <section className='movies__card-list'>
+      <ul className='movies__card-list'>
         <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic1} />
         <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic2} />
         <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic3} />
@@ -33,7 +33,7 @@ function MoviesCardList({ isSavedFilmsPage
         <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic10} />
         <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic11} />
         <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic12} />
-      </section>
+      </ul>
 
     </>
   );

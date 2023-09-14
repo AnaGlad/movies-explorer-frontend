@@ -21,6 +21,8 @@ function Login({ buttonName
                 name='email'
                 className='login__form-text login__form-text_type_email'
                 placeholder='E-mail'
+                minLength='2'
+                maxLength='30'
                 required
               />
             </label>
@@ -30,6 +32,8 @@ function Login({ buttonName
                 name='password'
                 className='login__form-text login__form-text_type_password'
                 placeholder='Пароль'
+                minLength='8'
+                maxLength='30'
                 required
               />
             </label>

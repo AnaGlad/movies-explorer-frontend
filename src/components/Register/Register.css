@@ -8,6 +8,10 @@
   justify-content: center;
 }
 
+.register__header-logo {
+  display: flex;
+}
+
 .register__title {
   font-size: 24px;
   font-style: normal;

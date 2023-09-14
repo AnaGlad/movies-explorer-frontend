@@ -17,7 +17,7 @@ function Header({ color, textcolor, colorIcon }) {
     localStorage.removeItem('token');
     navigate('signin');
   }
-  const [isLogin] = useState(false);
+  const [isLogin] = useState(true);
   return (
     <header className='header' style={{ backgroundColor: color }}>
       <Link to='/'><img className='header__logo' src={headerLogo} alt='Логотип Улыбочка' /></Link>

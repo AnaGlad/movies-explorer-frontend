@@ -21,7 +21,7 @@ function AboutMe({
         <img
           className='about-me__photo'
           src={photoMe}
-          alt="Фото"
+          alt="Фото акулы в сфере ИТ"
         />
       </div>
       <Portfolio/>

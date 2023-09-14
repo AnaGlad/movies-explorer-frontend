@@ -36,7 +36,7 @@ function App() {
           <Route
             exact
             path='/profile'
-            element={<Profile header={<Header color={'rgba(255, 255, 255, 1)'} textcolor={'rgba(0, 0, 0, 1)'} colorIcon={'rgba(249, 249, 249, 1)'}/>} name={'Настя'} />}
+            element={<Profile header={<Header color={'rgba(255, 255, 255, 1)'} textcolor={'rgba(0, 0, 0, 1)'} colorIcon={'rgba(249, 249, 249, 1)'}/>} name={'Виталий'} />}
           />
           <Route
             exact

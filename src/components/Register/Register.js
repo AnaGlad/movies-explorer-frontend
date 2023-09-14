@@ -21,6 +21,8 @@ function Register({ buttonName
                 name='name'
                 className='register__form-text register__form-text_type_name'
                 placeholder='Имя'
+                minLength='2'
+                maxLength='30'
                 required
               />
             </label>
@@ -30,6 +32,8 @@ function Register({ buttonName
                 name='email'
                 className='register__form-text register__form-text_type_email'
                 placeholder='E-mail'
+                minLength='2'
+                maxLength='30'
                 required
               />
             </label>
@@ -39,6 +43,8 @@ function Register({ buttonName
                 name='password'
                 className='register__form-text register__form-text_type_password'
                 placeholder='Пароль'
+                minLength='8'
+                maxLength='30'
                 required
               />
             </label>

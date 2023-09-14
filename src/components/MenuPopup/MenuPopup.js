@@ -10,7 +10,7 @@ function MenuPopup({ isOpen, setIsOpen, isLogin }) {
       <div className={`menupopup ${isOpen ? 'menupopup_opened' : ''}`}>
         <div className='menupopup__container'>
           <button
-            className='menupopup__close-button hover'
+            className='menupopup__close-button'
             type='button'
             title='Close'
             onClick={() => setIsOpen(false)}

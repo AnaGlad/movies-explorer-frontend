@@ -8,6 +8,10 @@
   justify-content: center;
 }
 
+.login__header-logo {
+  display: flex;
+}
+
 .login__title {
   font-size: 24px;
   font-style: normal;

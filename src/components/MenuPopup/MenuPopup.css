@@ -24,8 +24,8 @@
   height: 22px;
   width: 22px;
   position: absolute;
-  top: 22px;
-  right: 22px;
+  top: 26px;
+  right: 26px;
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -54,7 +54,7 @@
 
 @media (max-width: 500px) {
   .menupopup__close-button {
-    top: 13px;
-    right: 13px;
+    top: 12px;
+    right: 17px;
   }
 }

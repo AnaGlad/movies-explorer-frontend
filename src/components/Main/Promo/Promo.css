@@ -43,7 +43,7 @@
 @media (max-width: 768px) {
   .promo {
     max-width: 768px;
-    padding: 140px 44px 0;
+    padding: 143px 44px 0;
     grid-template-columns: 1fr;
     justify-items: center;
     text-align: center;
