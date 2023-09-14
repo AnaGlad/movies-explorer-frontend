@@ -37,6 +37,11 @@
   justify-content: center;
   margin: 0;
 }
+@media (max-width: 830px) {
+  .techs__blockList {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
 
 .techs__block {
   border-radius: 10px;
@@ -76,7 +81,7 @@
 @media (max-width: 768px) {
   .techs__blockList {
     padding: 83px 0 90px;
-    grid-template-columns: repeat(7, 84px);
+    grid-template-columns: repeat(7, 1fr);
     grid-template-rows: minmax(57px, auto);
   }
 }
