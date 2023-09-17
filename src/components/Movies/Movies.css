@@ -1,0 +1,34 @@
+.movies {
+  padding: 70px 70px 80px;
+  box-sizing: border-box;
+}
+
+.movies__more-button {
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  background: rgba(248, 248, 248, 1);
+  height: 36px;
+  cursor: pointer;
+}
+
+.movies__more-button:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 899px) {
+  .movies {
+    padding: 86px 30px 80px;
+  }
+}
+
+@media (max-width: 600px) {
+  .movies {
+    padding: 90px 10px 80px;
+  }
+}

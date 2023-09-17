@@ -1,0 +1,60 @@
+.menupopup {
+  visibility: hidden;
+  position: fixed;
+  width: 0;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  display: flex;
+  transition: visibility 0s linear 0.5s, opacity 0.5s linear;
+  justify-content: end;
+}
+
+.menupopup__container {
+  background-color: rgba(255, 255, 255, 1);
+  width: 100%;
+  margin: 0 0 0 248px;
+}
+.menupopup__close-button {
+  background-image: url(../../images/closeCross.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 22px;
+  width: 22px;
+  position: absolute;
+  top: 26px;
+  right: 26px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.menupopup_opened {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 0.5s linear;
+  width: 100%;
+}
+
+@media (min-width: 769px) {
+  .menupopup_opened {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .menupopup__container {
+    margin: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .menupopup__close-button {
+    top: 12px;
+    right: 17px;
+  }
+}

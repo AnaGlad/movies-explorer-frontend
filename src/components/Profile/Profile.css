@@ -1,0 +1,178 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  box-sizing: border-box;
+  margin: 74px auto 70px;
+}
+
+.profile__welcome {
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0;
+}
+
+.profile__container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto 0;
+  width: 410px;
+  gap: 17px;
+  padding-top: 123px;
+}
+
+.profile__box{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 14px;
+}
+
+.profile__box:first-child {
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.profile__box-name {
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0;
+}
+
+.profile__box-label {
+}
+
+.profile__box-value {
+  display: flex;
+  border: none;
+  color: #000;
+  text-align: right;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.profile__buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile__buttons_hide {
+  visibility: hidden;
+  display: block;
+}
+
+.profile__button-edit {
+  border: none;
+  background-color: transparent;
+  text-align: center;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  cursor: pointer;
+  padding-top: 188px;
+}
+.profile__button-edit:hover {
+  opacity: 0.7;
+}
+
+.profile__button-exit {
+  border: none;
+  background-color: transparent;
+  color: #ee3465;
+  text-align: center;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding-top: 16px;
+  cursor: pointer;
+}
+
+.profile__button-exit:hover {
+  opacity: 0.7;
+}
+
+.profile__button-save {
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 410px;
+  height: 45px;
+  border-radius: 3px;
+  background: #3456f3;
+  color: #fff;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  content: 'Сохранить';
+  padding: 0;
+}
+
+.profile__button_hide {
+  visibility: hidden;
+  display: block;
+}
+
+.profile__button-save:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .profile__container {
+    padding: 96px 0 210px;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile {
+    margin: 236px auto 269px;
+    max-width: 768px;
+  }
+}
+
+@media (max-width: 768px) {
+.profile__button-edit {
+  padding-top: 177px;
+}}
+
+@media (max-width: 450px) {
+  .profile__container {
+    width: 260px;
+  }
+}
+@media (max-width: 450px) {
+  .profile {
+    margin: 70px auto 40px;
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 450px) {
+  .profile__button-edit {
+    font-size: 12px;
+    font-weight: 400;
+    padding-top: 344px;
+  }
+}
+
+@media (max-width: 450px) {
+  .profile__button-exit {
+    font-size: 12px;
+    font-weight: 400;
+  }
+}
+
+@media (max-width: 450px) {
+  .profile__container {
+    padding: 80px 0 379px;
+  }
+}
