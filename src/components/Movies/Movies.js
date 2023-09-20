@@ -5,15 +5,15 @@ import MoviesCardList from '../Movies/MoviesCardList/MoviesCardList'
 
 
 
-function Movies({ header, footer
+function Movies({ isActiveButton,isActivePreloader, movies, header, footer, searchMovies, searchMoviesMessage
 }) {
   return (
     <>
       {header}
       <main className='movies'>
-        <SearchForm />
-        <MoviesCardList isSavedFilmsPage={false} />
-        <button className='movies__more-button' type='button'>Ещё</button>
+        <SearchForm searchMovies={searchMovies}/>
+        <MoviesCardList searchMoviesMessage={searchMoviesMessage} isActivePreloader={isActivePreloader}movies={movies}isSavedFilmsPage={false} />
+        
       </main>
       {footer}
     </>

@@ -4,9 +4,8 @@ import smallTumb from '../../../images/smallTumb.svg'
 import smallTumbNotActive from '../../../images/smallTumbNotActive.svg'
 
 
-function FilterCheckbox({
+function FilterCheckbox({isShortFilm, setIsShortFilm
 }) {
-  const [isShortFilm, setIsShortFilm] = useState(true);
 
   return (
     <div className='filterCheckbox'>

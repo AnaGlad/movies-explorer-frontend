@@ -8,15 +8,22 @@ const config = {
   errorUnderline: 'popup__form-text_underline-active',
 };
 
-const options = {
-  baseUrl: `https://api.avp.nomoreparties.co/`,
+const optionsMainApi = {
+  // baseUrl: `https://api.nomoreparties.co/beatfilm-movies/`,
+  baseUrl: `http://localhost:3000/`,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+};
+const optionsMoviesApi = {
+  baseUrl: `https://api.nomoreparties.co/beatfilm-movies/`,
   // baseUrl: `http://localhost:3000/`,
   headers: {
     'Content-Type': 'application/json',
   },
 };
 const authOptions={
-  baseUrl:`https://api.avp.nomoreparties.co/`,
+  baseUrl:`http://localhost:3000/`,
 }
 // // Edit profile popup
 // const popupEditProfile = document.querySelector('.popup_type_edit');
@@ -39,8 +46,9 @@ const authOptions={
 
 export {
   config,
-  options,
-  authOptions
+  optionsMainApi,
+  authOptions,
+  optionsMoviesApi
   // buttonEditProfile,
   // profileFormName,
   // profileFormOccupation,
