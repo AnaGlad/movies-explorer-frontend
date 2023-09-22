@@ -2,12 +2,16 @@ import React, { useState } from 'react';
 import './Navigation.css';
 import iconMan from '../../images/icon__COLOR_icon-main.svg';
 import { Link } from 'react-router-dom';
+import { CurrentUserContext } from '../../contexts/CurrentUserContext';
+
 
 function Navigation({ textColor, colorIcon, children, isPopup, isLoggedIn
 }) {
+  const currentUser = React.useContext(CurrentUserContext);
+
   return (
     <>
-      <nav className={`navigation ${(isLoggedIn)&&(!isPopup) ? 'navigation_hidden' : ''}`}>
+      <nav className={`navigation ${(isLoggedIn) && (!isPopup) ? 'navigation_hidden' : ''}`}>
         <ul className={`navigation__container ${(isLoggedIn) ? '' : 'navigation__container_hidden'} ${(isPopup) ? '' : 'navigation__container_popup'} `}>
           {children}
           <li>

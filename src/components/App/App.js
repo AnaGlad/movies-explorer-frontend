@@ -23,8 +23,14 @@ import movieApi from '../../utils/MoviesApi';
 function App() {
   const [userData, setUserData] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [loginError, setLoginError] = useState('');
+  const [updateUserError, setUpdateUserError] = useState('');
+
   const [currentUser, setCurrentUser] = useState({});
   const [movies, setMovies] = useState([]);
+  const [searchString, setSearchString] = useState('');
+  const [isShortFilm, setIsShortFilm] = useState(false);
+
   const [searchMoviesMessage, setSearchMoviesMessage] = useState('');
   const [savedMovies, setSavedMovies] = useState([]);
 
@@ -45,10 +51,11 @@ function App() {
   //   }
   // }
   function searchMovies(e, searchString, isShortFilm) {
-    e.preventDefault()
+    e?.preventDefault()
     setSearchMoviesMessage('')
     console.log(searchString);
     if (isLoggedIn) {
+
       setisActivePreloader(!isActivePreloader);
       movieApi
         .getInitialMovies()
@@ -56,9 +63,13 @@ function App() {
           console.log(data)
           const result = data.filter((item) => ((item.nameRU.toLowerCase().includes(searchString.toLowerCase())) ||
             (item.nameEN.toLowerCase().includes(searchString.toLowerCase()))) && (!isShortFilm || item.duration <= 40)).map((item) => ({
-              ...item,
+              ...item, isInSavedMovie: isMovieInSavedMovie(item.id)
             }))
           setMovies(result);
+          localStorage.setItem('searchString', searchString);
+          localStorage.setItem('isShortFilm', isShortFilm);
+          localStorage.setItem('movies', JSON.stringify(result));
+
           setisActivePreloader(isActivePreloader);
           return result
         })
@@ -70,29 +81,29 @@ function App() {
         });
     }
   }
-  function searchSavedMovies(e, searchString, isShortFilm) {
-    e.preventDefault()
-    console.log(searchString);
-    if (isLoggedIn) {
-      setisActivePreloader(!isActivePreloader);
-      movieApi
-        .getInitialMovies()
-        .then((data) => {
-          console.log(data)
-          setMovies(
-            data.filter((item) => ((item.nameRU.toLowerCase().includes(searchString.toLowerCase())) ||
-              (item.nameEN.toLowerCase().includes(searchString.toLowerCase()))) && (!isShortFilm || item.duration <= 40)).map((item) => ({
-                ...item,
-              }))
-          );
-          setisActivePreloader(isActivePreloader);
-        })
-        .then((data) => { return (data.length > 12 ? setIsActiveButton(!isActiveButton) : '') })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
-  }
+  // function searchSavedMovies(e, searchString, isShortFilm) {
+  //   e.preventDefault()
+  //   console.log(searchString);
+  //   if (isLoggedIn) {
+  //     setisActivePreloader(!isActivePreloader);
+  //     mainApi
+  //       .getInitialMovies()
+  //       .then((data) => {
+  //         console.log(data)
+  //         setSavedMovies(
+  //           data.filter((item) => ((item.nameRU.toLowerCase().includes(searchString.toLowerCase())) ||
+  //             (item.nameEN.toLowerCase().includes(searchString.toLowerCase()))) && (!isShortFilm || item.duration <= 40)).map((item) => ({
+  //               ...item,
+  //             }))
+  //         );
+  //         setisActivePreloader(isActivePreloader);
+  //       })
+  //       .then((data) => { return (data.length > 12 ? setIsActiveButton(!isActiveButton) : '') })
+  //       .catch((err) => {
+  //         console.log(err);
+  //       });
+  //   }
+  // }
 
   useEffect(() => {
     if (isLoggedIn) {
@@ -104,8 +115,48 @@ function App() {
         .catch((err) => {
           console.log(err);
         });
+
+      mainApi.getInitialMovies()
+        .then((data) => {
+          setSavedMovies(data);
+          console.log(data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     }
   }, [isLoggedIn]);
+
+  function handleSaveMovie(movie) {
+    mainApi
+      .postNewMovie(movie)
+      .then((movie) => {
+        console.log(movie);
+        setMovies(movies.map((item) => item.id === movie.movieId ? { ...item, 'isInSavedMovie': true } : item))
+        localStorage.setItem('movies', JSON.stringify(movies));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  function handleDeleteMovie(movieId) {
+    mainApi
+      .deleteSaveMovie(movieId)
+      .then((message) => {
+        console.log(message);
+        setSavedMovies(savedMovies.filter((movie) => movie.movieId !== movieId))
+        setMovies(movies.map((item) => item.id === movieId ? { ...item, 'isInSavedMovie': false } : item))
+        localStorage.setItem('movies', JSON.stringify(movies));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  function isMovieInSavedMovie(movieId) {
+    return savedMovies.filter((savedMovie) => savedMovie.movieId === movieId).length > 0
+  }
 
   function checkToken() {
     const token = localStorage.getItem('token');
@@ -127,13 +178,51 @@ function App() {
       });
   }
 
+  function getMovies() {
+    const movies = localStorage.getItem('movies');
+    // const searchString = localStorage.getItem('searchString');
+    // const isShortFilm = localStorage.getItem('isShortFilm');
+    // console.log(movies);
+    if (movies) {
+      setMovies(JSON.parse(movies));
+      // setSearchString(searchString);
+      // setIsShortFilm(isShortFilm);
+    }
+  }
+
+  function getSearchString() {
+    console.log('test2s');
+    const searchString = localStorage.getItem('searchString');
+    console.log(searchString);
+    // console.log(movies);
+    setSearchString(searchString);
+    if (searchString) {
+      // setSearchString(searchString);
+      // setIsShortFilm(isShortFilm);
+    }
+  }
+
+  function getIsShortFilm() {
+    const isShortFilm = localStorage.getItem('isShortFilm');
+    // console.log(movies);
+    if (isShortFilm) {
+      setIsShortFilm(isShortFilm);
+      // setSearchString(searchString);
+      // setIsShortFilm(isShortFilm);
+    }
+  }
+
   useEffect(() => {
     checkToken();
+    getMovies();
+    getSearchString();
+    getIsShortFilm()
   }, []);
 
   function handleLogin(formValue) {
     console.log("handleLogin");
     console.log(isLoggedIn);
+    setLoginError('')
     return auth
       .authorize(formValue.email, formValue.password)
       .then((data) => {
@@ -145,18 +234,22 @@ function App() {
       })
       .catch((error) => {
         // handleOpenTooltip(false);
+        setLoginError('Неверный логин или пароль')
         console.log(error);
       });
   }
 
   function handleUpdateUser(user) {
+    setUpdateUserError('')
     mainApi
       .changeUserInfo(user.name, user.email)
       .then((data) => {
         setCurrentUser(data);
+        alert('Данные успешно сохранены')
       })
-      .catch((err) => {
-        console.log(err);
+      .catch((error) => {
+        console.log(error);
+        setUpdateUserError('Данные указаны неверно')
       });
   }
 
@@ -178,11 +271,15 @@ function App() {
               path='/movies'
               element={<ProtectedRoute isLoggedIn={isLoggedIn}
                 element={Movies}
+                handleSaveMovie={handleSaveMovie}
+                handleDeleteMovie={handleDeleteMovie}
                 searchMoviesMessage={searchMoviesMessage}
                 isActiveButton={isActiveButton}
                 isActivePreloader={isActivePreloader}
                 searchMovies={searchMovies}
+                searchString={searchString}
                 movies={movies}
+                isShortFilm={isShortFilm}
                 header={<Header isLoggedIn={isLoggedIn} color={'rgba(255, 255, 255, 1)'}
                   textcolor={'rgba(0, 0, 0, 1)'} colorIcon={'rgba(249, 249, 249, 1)'} />} footer={<Footer />} />}
             />
@@ -191,9 +288,10 @@ function App() {
               path='/saved-movies'
               element={<ProtectedRoute
                 isLoggedIn={isLoggedIn}
+                handleDeleteMovie={handleDeleteMovie}
                 element={SavedMovies}
                 savedMovies={savedMovies}
-                searchSavedMovies={searchSavedMovies}
+                // searchSavedMovies={searchSavedMovies}
                 header={<Header isLoggedIn={isLoggedIn} color={'rgba(255, 255, 255, 1)'} textcolor={'rgba(0, 0, 0, 1)'} colorIcon={'rgba(249, 249, 249, 1)'} />}
                 footer={<Footer />} />}
             />
@@ -202,6 +300,7 @@ function App() {
               path='/profile'
               element={<ProtectedRoute isLoggedIn={isLoggedIn}
                 element={Profile}
+                updateUserError={updateUserError}
                 setIsLoggedIn={setIsLoggedIn}
                 onUpdateUser={handleUpdateUser}
 
@@ -211,7 +310,7 @@ function App() {
             <Route
               exact
               path='/signin'
-              element={<Login onLogin={(formValue) => handleLogin(formValue)} buttonName={'Войти'} />}
+              element={<Login onLogin={(formValue) => handleLogin(formValue)} buttonName={'Войти'} loginError={loginError}/>}
             />
             <Route
               exact

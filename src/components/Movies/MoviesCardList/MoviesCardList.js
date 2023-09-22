@@ -3,7 +3,7 @@ import './MoviesCardList.css';
 import MoviesCard from '../MoviesCard/MoviesCard'
 import Preloader from '../Preloader/Preloader'
 
-function MoviesCardList({ isActivePreloader, movies, isSavedFilmsPage, searchMoviesMessage
+function MoviesCardList({ isActivePreloader, movies, isSavedFilmsPage, searchMoviesMessage, handleSaveMovie, handleDeleteMovie
 }) {
   const [showFilmCount, setShowFilmCount] = useState((window.innerWidth > 899) ? 12 : ((window.innerWidth > 600) ? 8 : 5));
 
@@ -21,7 +21,9 @@ function MoviesCardList({ isActivePreloader, movies, isSavedFilmsPage, searchMov
         <ul className='movies__card-list'>
           {movies.slice(0, showFilmCount).map((props) => (
             <MoviesCard
-              key={props.id}
+              handleSaveMovie={handleSaveMovie}
+              handleDeleteMovie={handleDeleteMovie}
+              key={props.id ? props.id : props.movieId}
               movie={props}
               isSavedFilmsPage={isSavedFilmsPage} />
           ))}

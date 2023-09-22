@@ -24,6 +24,13 @@ class Api {
     return Promise.reject(`Ошибка ${res.status}`);
   }
 
+  getInitialMovies() {
+    return fetch(`${this._baseUrl}movies`, {
+      method: 'GET',
+      headers: this._headers,
+      credentials: "include",
+    }).then(this._checkResponse);
+  }
 
   getUserInfo() {
     return fetch(`${this._baseUrl}users/me`, {
@@ -46,36 +53,36 @@ class Api {
   }
 
 
-  // putLike(cardId) {
-  //   return fetch(`${this._baseUrl}cards/${cardId}/likes`, {
-  //     method: 'PUT',
-  //     headers: this._headers,
-  //     credentials: "include",
-  //   }).then(this._checkResponse);
-  // }
+  deleteSaveMovie(movieId) {
+    return fetch(`${this._baseUrl}movies/${movieId}`, {
+      method: 'DELETE',
+      headers: this._headers,
+      credentials: "include",
+    }).then(this._checkResponse);
+  }
 
-  // deleteCard(cardId) {
-  //   return fetch(`${this._baseUrl}cards/${cardId}`, {
-  //     method: 'DELETE',
-  //     headers: this._headers,
-  //     credentials: "include",
-  //   }).then(this._checkResponse);
-  // }
-
-  // deleteLike(cardId) {
-  //   return fetch(`${this._baseUrl}cards/${cardId}/likes`, {
-  //     method: 'DELETE',
-  //     headers: this._headers,
-  //     credentials: "include",
-  //   }).then(this._checkResponse);
-  // }
-  // changeLikeCardStatus(cardId, isLiked) {
-  //   if (isLiked) {
-  //     return this.deleteLike(cardId);
-  //   } else {
-  //     return this.putLike(cardId);
-  //   }
-  // }
+  postNewMovie(movie) {
+    return fetch(`${this._baseUrl}movies`, {
+      method: 'POST',
+      headers: this._headers,
+      credentials: "include",
+      body: JSON.stringify({
+        country: movie.country,
+        director: movie.director,
+        duration: movie.duration,
+        year: movie.year,
+        description: movie.description,
+        trailerLink: movie.trailerLink,
+        nameRU: movie.nameRU,
+        nameEN: movie.nameEN,
+        image: `${"https://api.nomoreparties.co" + movie?.image?.url}`,
+        thumbnail: `${"https://api.nomoreparties.co" + movie?.image?.formats?.thumbnail?.url}`,
+        movieId: movie.id
+      }
+      ),
+    }).then(this._checkResponse);
+  }
 }
+
 const mainApi = new Api(optionsMainApi);
 export default mainApi;

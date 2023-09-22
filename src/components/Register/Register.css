@@ -85,13 +85,30 @@
   padding-left: 6px;
 }
 
-.register__validation {
+.register__form-validation {
   color: #ee3465;
   font-size: 10px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   padding-top: 10px;
+  max-width: 396px;
+}
+
+.register__form-save-button_hidden{
+  border-radius: 3px;
+background-color: #F8F8F8;
+color: #C2C2C2;
+text-align: center;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+border: none;
+width: 396px;
+height: 45px;
+margin: 69px 0 16px;
+cursor: pointer;
 }
 
 @media (max-width: 768px) {

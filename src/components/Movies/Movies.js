@@ -5,15 +5,16 @@ import MoviesCardList from '../Movies/MoviesCardList/MoviesCardList'
 
 
 
-function Movies({ isActiveButton,isActivePreloader, movies, header, footer, searchMovies, searchMoviesMessage
+function Movies({ isActiveButton, isActivePreloader, movies, header, footer, searchMovies, searchMoviesMessage, 
+  searchString, isShortFilm, handleSaveMovie, handleDeleteMovie
 }) {
   return (
     <>
       {header}
       <main className='movies'>
-        <SearchForm searchMovies={searchMovies}/>
-        <MoviesCardList searchMoviesMessage={searchMoviesMessage} isActivePreloader={isActivePreloader}movies={movies}isSavedFilmsPage={false} />
-        
+        <SearchForm searchMovies={searchMovies} movies={movies} searchStringLastSearch={searchString} isShortFilmLastSearch={isShortFilm}/>
+        <MoviesCardList searchMoviesMessage={searchMoviesMessage} isActivePreloader={isActivePreloader} movies={movies} 
+        isSavedFilmsPage={false} handleSaveMovie={handleSaveMovie} handleDeleteMovie={handleDeleteMovie}/>
       </main>
       {footer}
     </>

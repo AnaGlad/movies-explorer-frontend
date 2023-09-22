@@ -27,7 +27,7 @@ function Header({ color, textcolor, colorIcon, isLoggedIn }) {
                 <img className='header__menu-burger-img' src={burgerMenu} alt='Бургер Меню' />
               </div>
               <Navigation textColor={textcolor} colorIcon={colorIcon} isLoggedIn={isLoggedIn} />
-              <MenuPopup isOpen={isOpen} setIsOpen={setIsOpen} />
+              <MenuPopup isOpen={isOpen} setIsOpen={setIsOpen} isLoggedIn={isLoggedIn} />
             </>
           )}
       </div>

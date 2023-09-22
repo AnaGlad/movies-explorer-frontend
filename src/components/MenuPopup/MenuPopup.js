@@ -3,7 +3,7 @@ import './MenuPopup.css';
 import Navigation from '../Navigation/Navigation';
 
 
-function MenuPopup({ isOpen, setIsOpen, isLogin }) {
+function MenuPopup({ isOpen, setIsOpen, isLoggedIn }) {
 
   return (
     <>
@@ -15,7 +15,7 @@ function MenuPopup({ isOpen, setIsOpen, isLogin }) {
             title='Close'
             onClick={() => setIsOpen(false)}
           ></button>
-          <Navigation isPopup={true} isLogin={isLogin} children={
+          <Navigation isPopup={true} isLoggedIn={isLoggedIn} children={
             <li><a href='/' className={`navigation__container-link ${(window.location.pathname === '/') ? 'navigation__container-link_active' : ''}`}>
               Главная
             </a></li>} />
