@@ -11,7 +11,7 @@ import NotFoundPage from '../NotFoundPage/NotFoundPage';
 import './App.css';
 import { ProtectedRoute } from '../ProtectedRoute';
 import { Routes, Route } from 'react-router-dom';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 
 
@@ -35,7 +35,7 @@ function App() {
   const [savedMovies, setSavedMovies] = useState([]);
 
   const [isActivePreloader, setisActivePreloader] = useState(false);
-  const [isActiveButton, setIsActiveButton] = useState(false);
+  // const [isActiveButton, setIsActiveButton] = useState(false);
 
   const navigate = useNavigate();
 
@@ -181,6 +181,9 @@ function App() {
     // console.log(movies);
     if (movies) {
       setMovies(JSON.parse(movies));
+      if (movies === '[]') {
+        setSearchMoviesMessage('Ничего не найдено')
+      }
       // setSearchString(searchString);
       // setIsShortFilm(isShortFilm);
     }
@@ -263,7 +266,6 @@ function App() {
                 handleSaveMovie={handleSaveMovie}
                 handleDeleteMovie={handleDeleteMovie}
                 searchMoviesMessage={searchMoviesMessage}
-                isActiveButton={isActiveButton}
                 isActivePreloader={isActivePreloader}
                 searchMovies={searchMovies}
                 searchString={searchString}
