@@ -8,9 +8,6 @@ import deleteFilmIcon from '../../../images/deleteFilmIcon.svg'
 
 function MoviesCard({ movie, isSavedFilmsPage, handleSaveMovie, handleDeleteMovie }) {
 
-
-  // const currentUser = React.useContext(CurrentUserContext);
-
   function getTimeFromMins(mins) {
     let hours = Math.trunc(mins / 60);
     let minutes = mins % 60;
@@ -20,33 +17,6 @@ function MoviesCard({ movie, isSavedFilmsPage, handleSaveMovie, handleDeleteMovi
       return hours + 'ч ' + minutes + 'м'
     };
   };
-  // function handleClick() {
-  //   onCardClick(card);
-  // }
-
-  // function handleLikeClick() {
-  //   onCardLike(card);
-  // }
-
-  // function handleDeleteClick() {
-  //   onCardDelete(card._id);
-  // }
-
-  // function handleSaveMovie(movie) {
-  //   setIsSavedFilm(!isSavedFilm)
-  //   mainApi
-  //     .changeSaveMovieStatus(movie.id, !isSavedFilm)
-  //     .then((newMovie) => {
-  //       console.log(newMovie);
-  //       const newMovies = movies.map((movie) =>
-  //         movie.id === newMovie.id ? newMovies : movie
-  //       );
-  //       setMovies(newMovies);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }
 
   return (
     <>

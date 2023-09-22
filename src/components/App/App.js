@@ -35,7 +35,6 @@ function App() {
   const [savedMovies, setSavedMovies] = useState([]);
 
   const [isActivePreloader, setisActivePreloader] = useState(false);
-  // const [isActiveButton, setIsActiveButton] = useState(false);
 
   const navigate = useNavigate();
 
@@ -70,29 +69,6 @@ function App() {
         });
     }
   }
-  // function searchSavedMovies(e, searchString, isShortFilm) {
-  //   e.preventDefault()
-  //   console.log(searchString);
-  //   if (isLoggedIn) {
-  //     setisActivePreloader(!isActivePreloader);
-  //     mainApi
-  //       .getInitialMovies()
-  //       .then((data) => {
-  //         console.log(data)
-  //         setSavedMovies(
-  //           data.filter((item) => ((item.nameRU.toLowerCase().includes(searchString.toLowerCase())) ||
-  //             (item.nameEN.toLowerCase().includes(searchString.toLowerCase()))) && (!isShortFilm || item.duration <= 40)).map((item) => ({
-  //               ...item,
-  //             }))
-  //         );
-  //         setisActivePreloader(isActivePreloader);
-  //       })
-  //       .then((data) => { return (data.length > 12 ? setIsActiveButton(!isActiveButton) : '') })
-  //       .catch((err) => {
-  //         console.log(err);
-  //       });
-  //   }
-  // }
 
   useEffect(() => {
     if (isLoggedIn) {
@@ -162,7 +138,6 @@ function App() {
         }
         setUserData(data);
         setIsLoggedIn(true);
-        // navigate('/');
       })
       .catch((error) => {
         setIsLoggedIn(false);
@@ -176,16 +151,11 @@ function App() {
 
   function getMovies() {
     const movies = localStorage.getItem('movies');
-    // const searchString = localStorage.getItem('searchString');
-    // const isShortFilm = localStorage.getItem('isShortFilm');
-    // console.log(movies);
     if (movies) {
       setMovies(JSON.parse(movies));
       if (movies === '[]') {
         setSearchMoviesMessage('Ничего не найдено')
       }
-      // setSearchString(searchString);
-      // setIsShortFilm(isShortFilm);
     }
   }
 
@@ -225,7 +195,6 @@ function App() {
         })
       })
       .catch((error) => {
-        // handleOpenTooltip(false);
         setLoginError('Неверный логин или пароль')
         console.log(error);
       });
@@ -282,7 +251,6 @@ function App() {
                 handleDeleteMovie={handleDeleteMovie}
                 element={SavedMovies}
                 savedMovies={savedMovies}
-                // searchSavedMovies={searchSavedMovies}
                 header={<Header isLoggedIn={isLoggedIn} color={'rgba(255, 255, 255, 1)'} textcolor={'rgba(0, 0, 0, 1)'} colorIcon={'rgba(249, 249, 249, 1)'} />}
                 footer={<Footer />} />}
             />

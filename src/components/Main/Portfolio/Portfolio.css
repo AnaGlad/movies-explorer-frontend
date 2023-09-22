@@ -43,7 +43,7 @@
 }
 
 .portfolio__link-arrow {
-  margin: 0 5px 0 auto ;
+  margin: 0 5px 0 auto;
   display: flex;
 }
 .portfolio__link-name:hover {
@@ -100,7 +100,5 @@
 @media (max-width: 550px) {
   .portfolio__link-arrow {
     max-height: 10px;
-    /* justify-self: flex-start; */
-    /* margin: 0 5px 5px 0; */
   }
 }

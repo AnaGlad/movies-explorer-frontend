@@ -42,10 +42,7 @@ function Profile({ header, onUpdateUser, userName, setIsLoggedIn, updateUserErro
 
 
   function handleSubmit(e) {
-
-    // Запрещаем браузеру переходить по адресу формы
     e.preventDefault();
-    // Передаём значения управляемых компонентов во внешний обработчик
     onUpdateUser(
       formValue
     );
@@ -94,7 +91,7 @@ function Profile({ header, onUpdateUser, userName, setIsLoggedIn, updateUserErro
           {(updateUserError?.length > 0) ? <span className='register__form-validation'>{updateUserError}</span> : <></>}
           <div className={`${isActive ? 'profile__buttons_hide' : 'profile__buttons'}`}>
             <button className={isValid && !(formValue.name === currentUser.name && formValue.email === currentUser.email) ?
-              'profile__button-edit' : 'profile__button-edit_hidden'} 
+              'profile__button-edit' : 'profile__button-edit_hidden'}
               disabled={!(isValid && !(formValue.name === currentUser.name && formValue.email === currentUser.email))} type='button' onClick={() => setIsActive(true)}>Редактировать</button>
             <button className='profile__button-exit' type='button' onClick={() => signOut()}>Выйти из аккаунта</button>
           </div>

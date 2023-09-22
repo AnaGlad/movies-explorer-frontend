@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './FilterCheckbox.css';
 import smallTumb from '../../../images/smallTumb.svg'
 import smallTumbNotActive from '../../../images/smallTumbNotActive.svg'

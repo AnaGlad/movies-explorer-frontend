@@ -32,13 +32,12 @@ function SearchForm({ searchMovies, searchStringLastSearch, isShortFilmLastSearc
     console.log(isShortFilmLastSearch);
 
     setIsShortFilm(isShortFilmLastSearch)
-    // console.log(isShortFilm);
   },
     [isShortFilmLastSearch]);
 
 
   function handleClickCheckbox(newValue) {
-    console.log("handleClickCheckbox");//сюда отправка формы при изменении значения checkbox
+    console.log("handleClickCheckbox");
     console.log(newValue);
     setIsShortFilm(newValue)
     if (movies?.length > 0) {
@@ -46,11 +45,17 @@ function SearchForm({ searchMovies, searchStringLastSearch, isShortFilmLastSearc
     }
   }
 
-  // const errorMessage = 'Введите ключевое слово'
+  function handleSubmit(e) {
+    if (formValue.searchString.length > 0) {
+      searchMovies(e, formValue.searchString, isShortFilm)
+    } else {
+      alert ('Введите не пустой запрос')
+    }
+  }
 
   return (
     <section className='movies__search'>
-      <form className='movies__search-form' noValidate onSubmit={(e) => { searchMovies(e, formValue.searchString, isShortFilm) }}>
+      <form className='movies__search-form' noValidate onSubmit={(e) => { handleSubmit(e) }}>
         <div className='movies__search-container'>
           <img className='movies__search-img' src={searchIcon} alt='Иконка поиска' />
           <label className='movies__search-label'>
@@ -65,7 +70,6 @@ function SearchForm({ searchMovies, searchStringLastSearch, isShortFilmLastSearc
               required
               onChange={handleChange}
             />
-            {/* <span className='popup__form-text-error popup__form-text-error_type_name'></span> */}
           </label>
           <button className='movies__search-find' type='submit'><img className='movies__search-find-button' src={findIcon} alt='Стрелочка поиска' /></button>
         </div>

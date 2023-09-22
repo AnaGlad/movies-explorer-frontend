@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './Register.css';
 import headerLogo from '../../images/headerLogo.svg';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import auth from '../../utils/auth';
-// import { useFormWithValidation } from '../FormValidation/FormValidation';
-// import { memo } from 'react';
 
 function Register({ buttonName, onLogin
 }) {
@@ -16,7 +14,6 @@ function Register({ buttonName, onLogin
   const [registerError, setRegisterError] = useState('');
 
 
-  // const [values, setValues] = React.useState({});
   const [errors, setErrors] = React.useState({});
   const [isValid, setIsValid] = React.useState(false);
 
@@ -29,30 +26,17 @@ function Register({ buttonName, onLogin
     setErrors({ ...errors, [name]: target.validationMessage });
     setIsValid(target.closest("form").checkValidity());
   };
-  // const [errors, setErrors] = useState({});
-
-  // const navigate = useNavigate();
-
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setFormValue({
-  //     ...formValue,
-  //     [name]: value,
-  //   });
-  // };
 
   function handleSubmit(e) {
     setRegisterError('')
 
     if (e) {
       e.preventDefault();
-      // setErrors(validate(formValue));
     }
     auth
       .register(formValue.name, formValue.email, formValue.password)
       .then(() => {
         console.log('Вы успешно зарегистрировались!')
-        // navigate('/');
       })
       .then(() => {
         onLogin(formValue)
@@ -63,11 +47,6 @@ function Register({ buttonName, onLogin
         setRegisterError('Что-то пошло не так! Попробуйте ещё раз.')
       });
   }
-  // useEffect(() => {
-  //   if (Object.keys(errors).length === 0) {
-  //     callback();
-  //   }
-  // }, [errors]);
 
   return (
     <>
@@ -121,7 +100,6 @@ function Register({ buttonName, onLogin
             </label>
             {(errors?.password) ? <span className='register__form-validation'>{errors.password}</span> : <></>}
             {(registerError?.length > 0) ? <span className='register__form-validation'>{registerError}</span> : <></>}
-            {/* <span className='register__form-validation'>Что-то пошло не так</span> */}
             <button className={isValid ? 'register__form-save-button' : 'register__form-save-button_hidden'} type='submit' disabled={!isValid}>
               {buttonName}
             </button>

@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './Login.css';
 import headerLogo from '../../images/headerLogo.svg';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 function Login({ onLogin, buttonName, loginError
@@ -23,54 +23,6 @@ function Login({ onLogin, buttonName, loginError
     setErrors({ ...errors, [name]: target.validationMessage });
     setIsValid(target.closest("form").checkValidity());
   };
-  // const navigate = useNavigate();
-
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setFormValue({
-  //     ...formValue,
-  //     [name]: value,
-  //   });
-  //   console.log(name);
-  //   setErrors(validate(name, value));
-  // };
-
-  // useEffect(() => {
-  //   setIsValidForm(validatForm(formValue));
-  //   // console.log(errors);
-  // }, [formValue]);
-
-  // function validatForm(values) {
-  //   let errors = {};
-  //   if (!values.email) {
-  //     return false
-  //   } else if (!/\S+@\S+\.\S+/.test(values.email)) {
-  //     return false
-  //   }
-  //   if (!values.password) {
-  //     return false
-  //   }
-  //   console.log(errors);
-  //   return true;
-  // };
-
-  // function validate(name, value) {
-  //   let errors = {};
-  //   if (name === "email") {
-  //     if (!value) {
-  //       errors.email = 'Введите email';
-  //     } else if (!/\S+@\S+\.\S+/.test(value)) {
-  //       errors.email = 'Email некорректный';
-  //     }
-  //   } else {
-  //     if (!value) {
-  //       errors.password = 'Введите пароль';
-  //     }
-  //   }
-
-  //   console.log(errors);
-  //   return errors;
-  // };
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -112,7 +64,7 @@ function Login({ onLogin, buttonName, loginError
               />
             </label>
             {(errors?.password) ? <span className='login__form-validation'>{errors.password}</span> : <></>}
-            {(loginError.length>0) ? <span className='login__form-validation'>{loginError}</span> : <></>}
+            {(loginError.length > 0) ? <span className='login__form-validation'>{loginError}</span> : <></>}
             <button className={isValid ? 'login__form-save-button' : 'login__form-save-button_hidden'} type='submit' disabled={!isValid}>
               {buttonName}
             </button>

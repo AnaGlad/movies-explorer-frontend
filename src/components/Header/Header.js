@@ -4,17 +4,15 @@ import burgerMenu from '../../images/burgerMenu.svg';
 import Navigation from '../Navigation/Navigation';
 
 import './Header.css';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import MenuPopup from '../MenuPopup/MenuPopup';
 
 
 function Header({ color, textcolor, colorIcon, isLoggedIn }) {
   const [isOpen, setIsOpen] = useState(false);
-  const navigate = useNavigate();
   const location = useLocation();
 
 
-  // const [isLogin] = useState(true);
   return (
     <header className='header' style={{ backgroundColor: color }}>
       <Link to='/'><img className='header__logo' src={headerLogo} alt='Логотип Улыбочка' /></Link>

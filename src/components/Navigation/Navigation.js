@@ -1,13 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Navigation.css';
 import iconMan from '../../images/icon__COLOR_icon-main.svg';
-import { Link } from 'react-router-dom';
-import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 
 
 function Navigation({ textColor, colorIcon, children, isPopup, isLoggedIn
 }) {
-  const currentUser = React.useContext(CurrentUserContext);
 
   return (
     <>

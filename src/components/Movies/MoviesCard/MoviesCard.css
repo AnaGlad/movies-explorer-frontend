@@ -51,11 +51,6 @@
   width: 100%;
   min-height: 203px;
   object-fit: cover;
-  /* background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center; */
-  /* overflow: hidden; */
-  /* font-size: 0; */
 }
 
 @media (max-width: 899px) {
