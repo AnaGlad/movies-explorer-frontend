@@ -39,17 +39,6 @@ function App() {
 
   const navigate = useNavigate();
 
-
-  // const [isRegister, setIsRegister] = useState(false);
-
-  // function handleShowMessage(isRegister) {
-  //   setIsRegister(isRegister);
-  //   if (isRegister) {
-  //     console.log('Вы успешно зарегистрировались!');
-  //   } else {
-  //     console.log('Что-то пошло не так! Попробуйте ещё раз.');
-  //   }
-  // }
   function searchMovies(e, searchString, isShortFilm) {
     e?.preventDefault()
     setSearchMoviesMessage('')
@@ -132,8 +121,9 @@ function App() {
       .postNewMovie(movie)
       .then((movie) => {
         console.log(movie);
-        setMovies(movies.map((item) => item.id === movie.movieId ? { ...item, 'isInSavedMovie': true } : item))
-        localStorage.setItem('movies', JSON.stringify(movies));
+        const moviesNew = movies.map((item) => item.id === movie.movieId ? { ...item, 'isInSavedMovie': true } : item)
+        setMovies(moviesNew)
+        localStorage.setItem('movies', JSON.stringify(moviesNew));
       })
       .catch((err) => {
         console.log(err);
@@ -145,9 +135,11 @@ function App() {
       .deleteSaveMovie(movieId)
       .then((message) => {
         console.log(message);
+
         setSavedMovies(savedMovies.filter((movie) => movie.movieId !== movieId))
-        setMovies(movies.map((item) => item.id === movieId ? { ...item, 'isInSavedMovie': false } : item))
-        localStorage.setItem('movies', JSON.stringify(movies));
+        const moviesNew = movies.map((item) => item.id === movieId ? { ...item, 'isInSavedMovie': false } : item)
+        setMovies(moviesNew)
+        localStorage.setItem('movies', JSON.stringify(moviesNew));
       })
       .catch((err) => {
         console.log(err);
@@ -175,6 +167,10 @@ function App() {
       .catch((error) => {
         setIsLoggedIn(false);
         setUserData(null);
+        localStorage.removeItem('token');
+        localStorage.removeItem('searchString');
+        localStorage.removeItem('isShortFilm');
+        localStorage.removeItem('movies');
       });
   }
 
@@ -191,24 +187,17 @@ function App() {
   }
 
   function getSearchString() {
-    console.log('test2s');
     const searchString = localStorage.getItem('searchString');
     console.log(searchString);
-    // console.log(movies);
-    setSearchString(searchString);
     if (searchString) {
-      // setSearchString(searchString);
-      // setIsShortFilm(isShortFilm);
+      setSearchString(searchString);
     }
   }
 
   function getIsShortFilm() {
     const isShortFilm = localStorage.getItem('isShortFilm');
-    // console.log(movies);
     if (isShortFilm) {
-      setIsShortFilm(isShortFilm);
-      // setSearchString(searchString);
-      // setIsShortFilm(isShortFilm);
+      setIsShortFilm(isShortFilm === 'true');
     }
   }
 
@@ -310,7 +299,7 @@ function App() {
             <Route
               exact
               path='/signin'
-              element={<Login onLogin={(formValue) => handleLogin(formValue)} buttonName={'Войти'} loginError={loginError}/>}
+              element={<Login onLogin={(formValue) => handleLogin(formValue)} buttonName={'Войти'} loginError={loginError} />}
             />
             <Route
               exact

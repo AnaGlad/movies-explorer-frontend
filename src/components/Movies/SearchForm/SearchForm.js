@@ -42,10 +42,7 @@ function SearchForm({ searchMovies, searchStringLastSearch, isShortFilmLastSearc
     console.log(newValue);
     setIsShortFilm(newValue)
     if (movies?.length > 0) {
-      // const form = document.querySelector('.movies__search-form')
       searchMovies(undefined, formValue.searchString, !isShortFilm)
-      
-      // form.submit();
     }
   }
 

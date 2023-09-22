@@ -4,17 +4,8 @@ import smallTumb from '../../../images/smallTumb.svg'
 import smallTumbNotActive from '../../../images/smallTumbNotActive.svg'
 
 
-function FilterCheckbox({ isShortFilm, setIsShortFilm, handleClickCheckbox
+function FilterCheckbox({ isShortFilm, handleClickCheckbox
 }) {
-  const [isShortFilmImage, setIsShortFilmImage] = useState(isShortFilm);
-
-  useEffect(() => {
-    console.log('testisShortFilm');
-    console.log(isShortFilm);
-
-    // console.log(isShortFilm);
-  },
-    [isShortFilm]);
 
   return (
     <div className='filterCheckbox'>
@@ -22,7 +13,6 @@ function FilterCheckbox({ isShortFilm, setIsShortFilm, handleClickCheckbox
         <img className='filterCheckbox__button-icon filterCheckbox__button-icon_active'
           src={isShortFilm ? smallTumb : smallTumbNotActive} alt='Кнопка выбора короткометражных фильмов' />
       </button>
-          {/* <span>{isShortFilmImage}</span> */}
       <span className='filterCheckbox__span'>Короткометражки</span>
     </div>
   );

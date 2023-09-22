@@ -20,7 +20,7 @@ function SavedMovies({ header, footer, savedMovies, handleDeleteMovie
     <>
       {header}
       <main className='movies'>
-        <SearchForm searchMovies={handleSearchSavedMovies} movies={savedMovies} />
+        <SearchForm searchStringLastSearch={''} searchMovies={handleSearchSavedMovies} movies={savedMovies} />
         <MoviesCardList movies={savedMovies.filter((item) => ((item.nameRU.toLowerCase().includes(filterSavedMovies.toLowerCase())) ||
           (item.nameEN.toLowerCase().includes(filterSavedMovies.toLowerCase()))) && (!isShortFilm || item.duration <= 40))} isSavedFilmsPage={true} handleDeleteMovie={handleDeleteMovie} />
         {/* <button className='movies__more-button' type='button'>Ещё</button> */}

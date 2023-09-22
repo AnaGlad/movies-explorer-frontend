@@ -19,6 +19,9 @@ function Profile({ header, onUpdateUser, userName, setIsLoggedIn, updateUserErro
 
   function signOut() {
     localStorage.removeItem('token');
+    localStorage.removeItem('searchString');
+    localStorage.removeItem('isShortFilm');
+    localStorage.removeItem('movies');
     setIsLoggedIn(false)
     navigate('/');
   }
