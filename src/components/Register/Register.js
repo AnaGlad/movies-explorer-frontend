@@ -9,6 +9,7 @@ import auth from '../../utils/auth';
 function Register({ buttonName, onLogin
 }) {
   const [formValue, setFormValue] = useState({
+    name: '',
     email: '',
     password: '',
   });

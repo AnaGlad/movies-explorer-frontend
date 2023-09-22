@@ -5,7 +5,7 @@ import MoviesCardList from '../Movies/MoviesCardList/MoviesCardList'
 
 
 
-function Movies({ isActiveButton, isActivePreloader, movies, header, footer, searchMovies, searchMoviesMessage, 
+function Movies({ isActivePreloader, movies, header, footer, searchMovies, searchMoviesMessage, 
   searchString, isShortFilm, handleSaveMovie, handleDeleteMovie
 }) {
   return (

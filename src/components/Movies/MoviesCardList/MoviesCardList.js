@@ -9,7 +9,7 @@ function MoviesCardList({ isActivePreloader, movies, isSavedFilmsPage, searchMov
 
   useEffect(() => {
     setShowFilmCount((window.innerWidth > 899) ? 12 : ((window.innerWidth > 600) ? 8 : 5))
-  }, [movies]);
+  }, [isActivePreloader]);
 
   function changeFilmCount() {
     setShowFilmCount(showFilmCount + ((window.innerWidth > 899) ? 3 : 2));
