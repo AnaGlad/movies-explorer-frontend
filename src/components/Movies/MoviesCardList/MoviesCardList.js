@@ -1,40 +1,35 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './MoviesCardList.css';
 import MoviesCard from '../MoviesCard/MoviesCard'
-import pic1 from '../../../images/picture1.png'
-import pic2 from '../../../images/picture2.png'
-import pic3 from '../../../images/picture3.png'
-import pic4 from '../../../images/picture4.png'
-import pic5 from '../../../images/picture5.png'
-import pic6 from '../../../images/picture6.png'
-import pic7 from '../../../images/picture7.png'
-import pic8 from '../../../images/picture8.png'
-import pic9 from '../../../images/picture9.png'
-import pic10 from '../../../images/picture10.png'
-import pic11 from '../../../images/picture11.png'
-import pic12 from '../../../images/picture12.png'
 import Preloader from '../Preloader/Preloader'
 
-function MoviesCardList({ isSavedFilmsPage
+function MoviesCardList({ isActivePreloader, movies, isSavedFilmsPage, searchMoviesMessage, handleSaveMovie, handleDeleteMovie
 }) {
+  const [showFilmCount, setShowFilmCount] = useState((window.innerWidth > 899) ? 12 : ((window.innerWidth > 600) ? 8 : 5));
+
+  useEffect(() => {
+    setShowFilmCount((window.innerWidth > 899) ? 12 : ((window.innerWidth > 600) ? 8 : 5))
+  }, [isActivePreloader]);
+
+  function changeFilmCount() {
+    setShowFilmCount(showFilmCount + ((window.innerWidth > 899) ? 3 : 2));
+  }
+
   return (
     <>
-      {/* <Preloader/> */}
-      <ul className='movies__card-list'>
-        <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic1} />
-        <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic2} />
-        <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic3} />
-        <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic4} />
-        <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic5} />
-        <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic6} />
-        <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic7} />
-        <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic8} />
-        <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic9} />
-        <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic10} />
-        <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic11} />
-        <MoviesCard isSavedFilmsPage={isSavedFilmsPage} picture={pic12} />
-      </ul>
-
+      {isActivePreloader ? <Preloader /> : (movies?.length > 0 ?
+        <ul className='movies__card-list'>
+          {movies.slice(0, showFilmCount).map((props) => (
+            <MoviesCard
+              handleSaveMovie={handleSaveMovie}
+              handleDeleteMovie={handleDeleteMovie}
+              key={props.id ? props.id : props.movieId}
+              movie={props}
+              isSavedFilmsPage={isSavedFilmsPage} />
+          ))}
+        </ul> : <span className='error-message'>{searchMoviesMessage}</span>)
+      }
+      {movies?.length > showFilmCount ? (<button className='movies__more-button' type='button' onClick={changeFilmCount}>Ещё</button>) : (<></>)}
     </>
   );
 }

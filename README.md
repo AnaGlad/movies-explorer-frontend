@@ -8,6 +8,10 @@ Frontend https://movieavp.nomoredomainsicu.ru
 
 Backend https://api.movieavp.nomoredomainsicu.ru
 
+### Pull request ссылка
+
+https://github.com/AnaGlad/movies-explorer-frontend/pull/2
+
 ### Используемые инструменты
 
 * React

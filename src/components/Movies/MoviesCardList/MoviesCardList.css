@@ -22,3 +22,7 @@
     gap: 16px;
   }
 }
+
+.error-message {
+  color: red;
+}

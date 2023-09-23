@@ -5,11 +5,11 @@ import './NavTab.css';
 function NavTab({
 }) {
   return (
-    <div className='navtab'>
-      <a href='#aboutproject' className='navtab__link'>
+    <a href='#aboutproject' className='navtab__link'>
+      <div className='navtab'>
         Узнать больше
-      </a>
-    </div>
+      </div></a>
+
   );
 }
 

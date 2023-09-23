@@ -1,12 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Login.css';
 import headerLogo from '../../images/headerLogo.svg';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
-function Login({ buttonName
+function Login({ onLogin, buttonName, loginError
 }) {
-  const navigate = useNavigate();
+  const [formValue, setFormValue] = useState({
+    email: '',
+    password: '',
+  });
+
+  const [errors, setErrors] = React.useState({});
+  const [isValid, setIsValid] = React.useState(false);
+
+
+  const handleChange = (event) => {
+    const target = event.target;
+    const name = target.name;
+    const value = target.value;
+    setFormValue({ ...formValue, [name]: value });
+    setErrors({ ...errors, [name]: target.validationMessage });
+    setIsValid(target.closest("form").checkValidity());
+  };
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    onLogin(formValue);
+  }
 
   return (
     <>
@@ -14,30 +35,37 @@ function Login({ buttonName
         <div className='login__welcome'>
           <Link to='/'><img className='login__header-logo' src={headerLogo} alt='Логотип Улыбочка' /></Link>
           <h1 className='login__title'>Рады видеть!</h1>
-          <form className='login__form'>
+          <form className='login__form' onSubmit={handleSubmit} noValidate>
             <label className='login__label'>E-mail
               <input
                 type='email'
                 name='email'
+                value={formValue.email}
                 className='login__form-text login__form-text_type_email'
                 placeholder='E-mail'
                 minLength='2'
                 maxLength='30'
+                onChange={handleChange}
                 required
               />
             </label>
+            {(errors?.email) ? <span className='login__form-validation'>{errors.email}</span> : <></>}
             <label className='login__label'>Пароль
               <input
                 type='password'
                 name='password'
+                value={formValue.password}
                 className='login__form-text login__form-text_type_password'
                 placeholder='Пароль'
-                minLength='8'
+                minLength='2'
                 maxLength='30'
+                onChange={handleChange}
                 required
               />
             </label>
-            <button className='login__form-save-button' type='submit'>
+            {(errors?.password) ? <span className='login__form-validation'>{errors.password}</span> : <></>}
+            {(loginError.length > 0) ? <span className='login__form-validation'>{loginError}</span> : <></>}
+            <button className={isValid ? 'login__form-save-button' : 'login__form-save-button_hidden'} type='submit' disabled={!isValid}>
               {buttonName}
             </button>
           </form>

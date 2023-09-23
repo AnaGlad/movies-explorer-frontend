@@ -52,7 +52,6 @@
 @media (max-width: 600px) {
   .movies__search-container {
     padding-bottom: 7px;
-    /* max-width: 295px; */
     margin: 0;
   }
 }

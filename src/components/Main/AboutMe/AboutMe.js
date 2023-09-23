@@ -24,7 +24,7 @@ function AboutMe({
           alt="Фото акулы в сфере ИТ"
         />
       </div>
-      <Portfolio/>
+      <Portfolio />
     </section>
   );
 }

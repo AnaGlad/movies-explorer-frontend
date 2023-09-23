@@ -1,4 +1,4 @@
-import { authOptions } from './constants';
+import { authOptions } from '../utils/constants';
 
 class Auth {
   constructor(authOptions) {
@@ -12,11 +12,11 @@ class Auth {
     return Promise.reject(`Ошибка ${res.status}`);
   }
 
-  register(email, password) {
+  register(name, email, password) {
     return fetch(`${this._baseUrl}signup`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ name, email, password }),
     }).then(this._checkResponse);
   }
 
