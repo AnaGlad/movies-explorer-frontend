@@ -4,7 +4,7 @@
 
 .promo {
   background-color: #465dff;
-  padding: 75px 70px 0;
+  padding: 75px 70px 75px;
   display: grid;
   color: #fff;
   margin: auto;
@@ -37,13 +37,13 @@
   opacity: 0.5;
   max-width: 310px;
   padding-top: 36px;
-  margin: 0;
+  margin:0 0 146px 0;
 }
 
 @media (max-width: 768px) {
   .promo {
     max-width: 768px;
-    padding: 143px 44px 0;
+    padding: 143px 44px 75px;
     grid-template-columns: 1fr;
     justify-items: center;
     text-align: center;

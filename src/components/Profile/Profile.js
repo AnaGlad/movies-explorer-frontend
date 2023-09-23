@@ -96,7 +96,9 @@ function Profile({ header, onUpdateUser, userName, setIsLoggedIn, updateUserErro
             <button className='profile__button-exit' type='button' onClick={() => signOut()}>Выйти из аккаунта</button>
           </div>
           <button className={`profile__button ${isActive
-            ? 'profile__button-save' : 'profile__button_hide'}`} onClick={() => setIsActive(false)} type='submit'>Сохранить</button>
+            ? 'profile__button-save' : 'profile__button_hide'}`} onClick={() => setIsActive(false)}
+            disabled={!(isValid && !(formValue.name === currentUser.name && formValue.email === currentUser.email))}
+            type='submit'>Сохранить</button>
         </form>
       </main>
     </>

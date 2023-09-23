@@ -126,6 +126,10 @@
   padding: 0;
 }
 
+.profile__button-save:disabled {
+  background-color: #e8e8e8;
+}
+
 .profile__button_hide {
   visibility: hidden;
   display: block;
